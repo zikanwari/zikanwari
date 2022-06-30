@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Web site CI
 
 on:
   push:
