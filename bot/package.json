@@ -1,0 +1,14 @@
+{
+  "name": "zikanwari",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/launchpencil/zikanwari.git"
+  },
+  "author": "launchpencil",
+  "bugs": {
+    "url": "https://github.com/launchpencil/zikanwari/issues"
+  },
+  "homepage": "https://github.com/launchpencil/zikanwari#readme"
+}
