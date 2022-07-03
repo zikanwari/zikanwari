@@ -2,8 +2,8 @@ const { Client, Intents, Message } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
 const request = require('request');
-const url = 'https://zikanwari.f5.si/api/tomorrow.php';
-var sub = '';
+const URL = 'https://zikanwari.f5.si/api/tomorrow.php';
+var time = 0;
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -15,20 +15,17 @@ client.on("messageCreate", async (message) => {
   message.reply('明日の時間割は、');
   
   request.get({
-    uri: url,
+    uri: URL,
     headers: {'Content-type': 'application/json'},
-  }, function(err, req, data){
-    var sub = data;
-  });
-
-  console.log(sub);
-
-  for(x in sub){
-    console.log(sub[x]);
-  }
-
-  message.channel.send('うえーい');
+}, function(err, req, data){
+    a = data.split(',');
+    a.pop();
+    for(x in a){
+        sub = a[x];
+        time++;
+        message.channel.send(time + '時間目：' + sub);
+    } 
+  }); 
 });
 
-//client.login(process.env.TOKEN);
-client.login('');
+client.login(process.env.TOKEN);
