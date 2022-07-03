@@ -4,7 +4,6 @@ COPY package*.json ./
 
 RUN npm install
 
-COPY code ./code
+COPY code/index.js /
 
-WORKDIR /code
 CMD [ "node", "index.js" ]
