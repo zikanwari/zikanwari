@@ -3,6 +3,7 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_
 
 const request = require('request');
 const url = 'https://zikanwari.f5.si/api/tomorrow.php';
+var sub = '';
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -20,12 +21,14 @@ client.on("messageCreate", async (message) => {
     var sub = data;
   });
 
-  for(x in a){
-    console.log(sub[x])
+  console.log(sub);
+
+  for(x in sub){
+    console.log(sub[x]);
   }
 
   message.channel.send('うえーい');
 });
 
 //client.login(process.env.TOKEN);
-client.login('');
+client.login('OTY5ODQ1MDMzMDk4NDQwNzM2.GaGITU.COt0FRagn7b5eA70u9pSpIIqwG14xyyXjVKyFE');
