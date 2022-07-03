@@ -29,11 +29,10 @@ client.on("messageCreate", async (message) => {
         time++;
 
         message.channel.send(time + '時間目：' + sub);
-        
-    } 
-  }); 
 
-  message.reply('です。');
+    }
+    message.channel.send('です。');
+  }); 
 
 });
 
