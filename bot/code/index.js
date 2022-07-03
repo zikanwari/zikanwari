@@ -3,7 +3,6 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_
 
 const request = require('request');
 const URL = 'https://zikanwari.f5.si/api/tomorrow.php';
-var time = 0;
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -12,8 +11,10 @@ client.on('ready', () => {
 
 client.on("messageCreate", async (message) => {
   if (message.author.bot) return;
+  if (!message.channel.id == '968100689177870376') return;
 
   message.reply('明日の時間割は、');
+  var time = 0;
   
   request.get({
     uri: URL,
