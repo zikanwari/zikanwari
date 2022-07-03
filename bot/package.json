@@ -13,6 +13,6 @@
   "homepage": "https://github.com/launchpencil/zikanwari#readme",
   "dependencies": {
     "discord.js": "^13.8.1",
-    "https": "^1.0.0"
+    "request": "^2.88.2"
   }
 }
