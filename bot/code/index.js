@@ -12,20 +12,29 @@ client.on('ready', () => {
 
 client.on("messageCreate", async (message) => {
   if (message.author.bot) return;
+
   message.reply('明日の時間割は、');
   
   request.get({
     uri: URL,
     headers: {'Content-type': 'application/json'},
-}, function(err, req, data){
+  }, function(err, req, data){
     a = data.split(',');
     a.pop();
+
     for(x in a){
+
         sub = a[x];
+
         time++;
+
         message.channel.send(time + '時間目：' + sub);
+        
     } 
   }); 
+
+  message.reply('です。');
+
 });
 
 client.login(process.env.TOKEN);
