@@ -8,14 +8,14 @@ try{
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 }catch(PDOException $Exception){
-    die('接続エラー：' .$Exception->getMessage());
+    die('エラー,エラー,エラー,エラー,エラー,' .$Exception->getMessage());
 }
 try{
     $sql = "SELECT * FROM zikan.`2-5`";
     $stmh = $pdo->prepare($sql);
     $stmh->execute();
 }catch(PDOException $Exception){
-    die('接続エラー：' .$Exception->getMessage());
+    die('エラー,エラー,エラー,エラー,エラー,' .$Exception->getMessage());
 }
 
 $week = [
@@ -31,5 +31,5 @@ $week = [
   $date = date('w');
 
 while($row = $stmh->fetch(PDO::FETCH_ASSOC)){
-echo ( htmlspecialchars($row[ $week[$date] . '曜日' ]) . ',' );
+echo ( '"' . htmlspecialchars($row[ $week[$date] . '曜日' ]) . '",' );
 }

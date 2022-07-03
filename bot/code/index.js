@@ -4,7 +4,7 @@ const https = require('https');
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.channels.cache.get('970989571737288714').send('メッセージ')
+  client.channels.cache.get('970989571737288714').send('BOTが起動しました。')
 });
 
 client.on("messageCreate", async (message) => {
