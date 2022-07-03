@@ -19,5 +19,5 @@ try{
 }
 
 while($row = $stmh->fetch(PDO::FETCH_ASSOC)){
-echo ( htmlspecialchars($row['月曜日']) );
+echo ( htmlspecialchars($row['月曜日']) . ',' );
 }
