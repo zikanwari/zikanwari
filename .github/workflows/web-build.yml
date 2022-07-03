@@ -15,5 +15,5 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . -t registry.launchpencil.f5.si/zikanwari:web && docker push registry.launchpencil.f5.si/zikanwari:web
+      run: docker build . -t registry.launchpencil.f5.si/zikanwari:web --no-cache && docker push registry.launchpencil.f5.si/zikanwari:web
       working-directory: ./web
