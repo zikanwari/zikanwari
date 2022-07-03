@@ -10,5 +10,9 @@
   "bugs": {
     "url": "https://github.com/launchpencil/zikanwari/issues"
   },
-  "homepage": "https://github.com/launchpencil/zikanwari#readme"
+  "homepage": "https://github.com/launchpencil/zikanwari#readme",
+  "dependencies": {
+    "discord.js": "^13.8.1",
+    "https": "^1.0.0"
+  }
 }
