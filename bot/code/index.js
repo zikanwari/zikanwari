@@ -11,7 +11,7 @@ client.on('ready', () => {
 
 client.on("messageCreate", async (message) => {
   if (message.author.bot) return;
-  if (!message.channel.id == '968100689177870376') return;
+  if (!message.channel.id == 968100689177870376) return;
 
   message.reply('明日の時間割は、');
   var time = 0;
