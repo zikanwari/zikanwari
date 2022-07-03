@@ -2,7 +2,7 @@
 
 クラスメイト用に雑に作ったWebアプリ
 
-[![Web site CI](https://github.com/launchpencil/zikanwari/actions/workflows/web-build.yml/badge.svg)](https://github.com/launchpencil/zikanwari/actions/workflows/web-build.yml)
+[![Web site CI](https://github.com/launchpencil/zikanwari/actions/workflows/web-build.yml/badge.svg)](https://github.com/launchpencil/zikanwari/actions/workflows/web-build.yml)[![Bot CI](https://github.com/launchpencil/zikanwari/actions/workflows/bot-build.yml/badge.svg)](https://github.com/launchpencil/zikanwari/actions/workflows/bot-build.yml)
 
 ---
 
