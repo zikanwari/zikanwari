@@ -12,4 +12,4 @@ client.on("messageCreate", async (message) => {
   message.reply('明日の時間割は、');
 });
 
-client.login('OTY5ODQ1MDMzMDk4NDQwNzM2.YmzUkg.aVDrq6MR4jB5xcxBTV0EnKbOejU');
+client.login(process.env.TOKEN);
