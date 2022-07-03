@@ -30,8 +30,6 @@ $week = [
    
   $date = date('w');
 
-echo ( '[' );
 while($row = $stmh->fetch(PDO::FETCH_ASSOC)){
-    echo ( '"' . htmlspecialchars($row[ $week[$date] . '曜日' ]) . '",' );
+    echo ( htmlspecialchars($row[ $week[$date] . '曜日' ]) . ',' );
 }
-echo ( ']' );
