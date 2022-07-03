@@ -1,4 +1,5 @@
-FROM node 
-WORKDIR /code
+FROM node
+WORKDIR /app
 COPY . .
-CMD  ["node", "index.js"]
+RUN npm i
+CMD ["node", "code/index.js"]
