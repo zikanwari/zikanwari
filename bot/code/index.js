@@ -2,7 +2,7 @@ const { Client, Intents, Message } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
 const request = require('request');
-const URL = 'https://zikanwari.f5.si/api/tomorrow.php';
+const URL = 'http://zikanwari/api/tomorrow.php';
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
