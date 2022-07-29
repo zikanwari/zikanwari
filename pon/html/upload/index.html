@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>あっぷろーだー</title>
+</head>
+<body>
+    <h1>アップローダー</h1>
+    <p>画面収録の映像を効果音としてサーバーにアップロードするなんか便利なやつ</p>
+    <form action="save.php" method="post" enctype="multipart/form-data">
+        <input type="file" name="temp" required><br>
+        <input type="submit" value="アップロード">
+    </form>
+    <h3>備考</h3>
+    <ul>
+        <li>画面収録(.mov)から音部分(aac)のみを取り出し保存する</li>
+        <li>ffmpegを用いた変換処理をするため多少時間を要する（バックグラウンド実行）</li>
+        <li>ファイル名は「audioN.mov（Nには1~5の数字を入力）」の形式とし、数字がそれぞれ各ボタンと対応するようになる。</li>
+    </ul>
+</body>
+</html>
