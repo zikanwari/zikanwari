@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>変換処理表示</title>
+</head>
+<body>
+
 <?php
 
 if( !empty($_FILES['temp']['tmp_name']) ) {
@@ -11,3 +19,12 @@ if( !empty($_FILES['temp']['tmp_name']) ) {
 } else {
     echo 'errrrrrr';
 }
+
+?>
+
+<ul>
+    <li><a href="../">トップへ</a></li>
+    <li><a href="./">アップロードを続ける</a></li>
+</ul>
+</body>
+</html>

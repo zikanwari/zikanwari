@@ -4,4 +4,4 @@ COPY ./convert.sh /
 
 WORKDIR /upload/temp
 
-ENTRYPOINT [ "bash", "/convert.sh" ]
+ENTRYPOINT [ "bash", "/convert.sh", "&& tail -f /dev/null" ]
