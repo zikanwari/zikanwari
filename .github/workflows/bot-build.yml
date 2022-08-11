@@ -5,8 +5,6 @@ on:
   push:
     paths:
       - 'bot/**'
-    tags:
-      - 'v*'
 
 jobs:
   build:
@@ -17,7 +15,7 @@ jobs:
       - uses: docker/metadata-action@v3
         id: meta
         with:
-          images: ghcr.io/launchpencil/zikanwari:bot
+          images: ghcr.io/launchpencil/zikanwari
           tags: |
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
@@ -30,5 +28,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: bot
           labels: ${{ steps.meta.outputs.labels }}
