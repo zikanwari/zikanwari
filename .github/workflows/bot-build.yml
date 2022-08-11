@@ -25,4 +25,4 @@ jobs:
         with:
           context: bot/
           push: true
-          tags: bot
+          tags: ghcr.io/launchpencil/zikanwari:bot
