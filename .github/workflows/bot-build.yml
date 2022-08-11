@@ -19,17 +19,14 @@ jobs:
           tags: |
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
-          working-directory: ./bot
       - uses: docker/login-action@v1
         with:
           registry: ghcr.io
           username: launchpencil
           password: ${{ secrets.GITHUB_TOKEN }}
-          working-directory: ./bot
       - uses: docker/build-push-action@v2
         with:
           context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          working-directory: ./bot
