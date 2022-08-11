@@ -1,4 +1,4 @@
-name: Web site CI
+name: pon-convert CI
 
 on:
   workflow_dispatch:

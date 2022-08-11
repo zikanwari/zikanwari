@@ -1,4 +1,4 @@
-name: Bot CI
+name: pon-web CI
 
 on:
   workflow_dispatch:
