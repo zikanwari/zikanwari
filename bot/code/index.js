@@ -35,35 +35,71 @@ client.on("messageCreate", async (message) => {
         message.channel.send(time + '時間目：' + sub);
 
     }
-    message.channel.send('です。');*/
+    message.channel.send('です。');
     message.channel.send(
       {embed: {
         color: 7506394,
-        
+        author: {
+          name: a[6] + "曜日の日課表",
+          icon_url: "https://zikanwari.f5.si/favicon.ico"
+        },
+        title: "Web版はこちら",
+        url: "https://zikanwari.f5.si",
+        footer: {
+          icon_url: client.user.avatarURL,
+          text: "時間割通知システム"
+        },
         fields: [
           {
-            name: ":one:",
+            name: ":one:" + a[0],
             value: "a"
           },
           {
-            name: ":two:",
+            name: ":two:" + a[1],
             value: "a"
           },
           {
-            name: ":three:",
+            name: ":three:" + a[2],
             value: "a"
           },
           {
-            name: ":four:",
+            name: ":four:" + a[3],
             value: "a"
           },
           {
-            name: ":five:",
+            name: ":five:" + a[4],
             value: "a"
           },
           {
-            name: ":six:",
+            name: ":six:" + a[5],
             value: "a"
+          }
+        ]
+      }}
+    );*/
+    message.channel.send(
+      {embed: {
+        color: 7506394,
+        fields: [
+          {
+            name: "field :one:",
+            value: "1つめのfieldだよ"
+          },
+          {
+            name: "field :two:",
+            value: "2つめのfieldだよ"
+          },
+          {
+            name: "field :three:",
+            value: "3つめのfieldだよ"
+          },
+          {
+            name: "field :four:",
+            value: "4つめのfieldだよ"
+          },
+          {
+            name: "field :five:",
+            value: "5つめのfieldだよ"
           }
         ]
       }}
