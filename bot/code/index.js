@@ -42,27 +42,27 @@ client.on("messageCreate", async (message) => {
         
         fields: [
           {
-            name: ":one:" + a[0],
+            name: ":one:",
             value: "a"
           },
           {
-            name: ":two:" + a[1],
+            name: ":two:",
             value: "a"
           },
           {
-            name: ":three:" + a[2],
+            name: ":three:",
             value: "a"
           },
           {
-            name: ":four:" + a[3],
+            name: ":four:",
             value: "a"
           },
           {
-            name: ":five:" + a[4],
+            name: ":five:",
             value: "a"
           },
           {
-            name: ":six:" + a[5],
+            name: ":six:",
             value: "a"
           }
         ]
