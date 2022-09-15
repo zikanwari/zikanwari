@@ -13,7 +13,6 @@ client.on("messageCreate", async (message) => {
   if (message.author.bot) return;
   if (message.channel.id !== '968100689177870376') return;
 
-  message.reply('明日の時間割は、');
   var time = 0;
   
   request.get({
@@ -22,10 +21,11 @@ client.on("messageCreate", async (message) => {
   }, function(err, req, data){
     a = data.split(',');
     a.pop();
+    message.reply('明日(' + a[1] + ')の時間割は、');
 
     for(x in a){
 
-        sub = a[x];
+        sub = a[x+1];
 
         time++;
 
