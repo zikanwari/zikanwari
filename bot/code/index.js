@@ -21,11 +21,12 @@ client.on("messageCreate", async (message) => {
   }, function(err, req, data){
     a = data.split(',');
     a.pop();
-    message.reply('明日(' + a[1] + ')の時間割は、');
+    message.reply('明日(' + a[0] + ')の時間割は、');
 
+    var x = 1;
     for(x in a){
 
-        sub = a[x+1];
+        sub = a[x];
 
         time++;
 
