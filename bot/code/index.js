@@ -1,4 +1,4 @@
-const { Client, Intents, Message } = require('discord.js');
+const { Client, Intents, Message, EmbedBuilder } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
 const request = require('request');
@@ -77,7 +77,7 @@ client.on("messageCreate", async (message) => {
         ]
       }}
     );*/
-    const embed = new Discord.MessageEmbed()
+    const embed = new EmbedBuilder()
     .setTitle('埋め込みのタイトル')
     .setURL('https://google.com')
     .addField('name', 'value')
