@@ -11,7 +11,7 @@ client.on('ready', () => {
 
 client.on("messageCreate", async (message) => {
   if (message.author.bot) return;
-  if (message.channel.id !== ('968100689177870376' || '970989571737288714')) return;
+  if ((message.channel.id !== '968100689177870376') || (message.channel.id !== '970989571737288714')) return;
 
   var time = 0;
   
@@ -36,6 +36,47 @@ client.on("messageCreate", async (message) => {
 
     }
     message.channel.send('です。');
+    message.channel.send(
+      {embed: {
+        color: 7506394,
+        author: {
+          name: a[6] + "曜日の日課表",
+          icon_url: "https://zikanwari.f5.si/favicon.ico"
+        },
+        title: "Web版はこちら",
+        url: "https://zikanwari.f5.si",
+        footer: {
+          icon_url: client.user.avatarURL,
+          text: "時間割通知システム"
+        },
+        fields: [
+          {
+            name: ":one:" + a[0],
+            value: ""
+          },
+          {
+            name: ":two:" + a[1],
+            value: ""
+          },
+          {
+            name: ":three:" + a[2],
+            value: ""
+          },
+          {
+            name: ":four:" + a[3],
+            value: ""
+          },
+          {
+            name: ":five:" + a[4],
+            value: ""
+          },
+          {
+            name: ":six:" + a[5],
+            value: ""
+          }
+        ]
+      }}
+    );
   }); 
 
 });
