@@ -11,7 +11,7 @@ client.on('ready', () => {
 
 client.on("messageCreate", async (message) => {
   if (message.author.bot) return;
-  if ((message.channel.id !== '968100689177870376') || (message.channel.id !== '970989571737288714')) return;
+  if (message.channel.id !== '968100689177870376' || message.channel.id !== '970989571737288714') return;
 
   var time = 0;
   
