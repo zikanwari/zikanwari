@@ -21,14 +21,16 @@ client.on("messageCreate", async (message) => {
   }, function(err, req, data){
     a = data.split(',');
     a.pop();
-    message.reply('明日(' + a[0] + ')の時間割は、');
-
-    var x = 1;
+    message.reply('明日(' + a[6] + ')の時間割は、');
     for(x in a){
 
         sub = a[x];
 
         time++;
+
+        if (time > 6) {
+          break;
+        }
 
         message.channel.send(time + '時間目：' + sub);
 
