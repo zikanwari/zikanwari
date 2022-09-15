@@ -22,7 +22,7 @@ client.on("messageCreate", async (message) => {
     a = data.split(',');
     a.pop();
     message.reply('明日(' + a[6] + ')の時間割は、');
-    for(x in a){
+    /*for(x in a){
 
         sub = a[x];
 
@@ -35,7 +35,7 @@ client.on("messageCreate", async (message) => {
         message.channel.send(time + '時間目：' + sub);
 
     }
-    message.channel.send('です。');
+    message.channel.send('です。');*/
     message.channel.send(
       {embed: {
         color: 7506394,
