@@ -77,33 +77,13 @@ client.on("messageCreate", async (message) => {
         ]
       }}
     );*/
-    message.channel.send(
-      {embed: {
-        color: 7506394,
-        fields: [
-          {
-            name: "field :one:",
-            value: "1つめのfieldだよ"
-          },
-          {
-            name: "field :two:",
-            value: "2つめのfieldだよ"
-          },
-          {
-            name: "field :three:",
-            value: "3つめのfieldだよ"
-          },
-          {
-            name: "field :four:",
-            value: "4つめのfieldだよ"
-          },
-          {
-            name: "field :five:",
-            value: "5つめのfieldだよ"
-          }
-        ]
-      }}
-    );
+    const embed = new Discord.MessageEmbed()
+    .setTitle('Web版はこちら')
+    .setURL('https://zikanwari.f5.si')
+    .addField(':six:' + a[5], 'value')
+    .setColor('RANDOM')
+    .setTimestamp()
+  message.channel.send({ embeds: [embed] })
   }); 
 
 });
