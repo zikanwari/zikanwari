@@ -80,7 +80,7 @@ client.on("messageCreate", async (message) => {
     const embed = new Discord.MessageEmbed()
     .setTitle('Web版はこちら')
     .setURL('https://zikanwari.f5.si')
-    .addField(':six:' + a[5], 'value')
+    .addField(':six:', 'value')
     .setColor('RANDOM')
     .setTimestamp()
   message.channel.send({ embeds: [embed] })
