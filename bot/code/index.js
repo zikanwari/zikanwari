@@ -78,9 +78,9 @@ client.on("messageCreate", async (message) => {
       }}
     );*/
     const embed = new Discord.MessageEmbed()
-    .setTitle('Web版はこちら')
-    .setURL('https://zikanwari.f5.si')
-    .addField(':six:', 'value')
+    .setTitle('埋め込みのタイトル')
+    .setURL('https://google.com')
+    .addField('name', 'value')
     .setColor('RANDOM')
     .setTimestamp()
   message.channel.send({ embeds: [embed] })
