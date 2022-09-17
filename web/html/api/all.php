@@ -18,21 +18,18 @@ try{
     die('エラー,エラー,エラー,エラー,エラー,' .$Exception->getMessage());
 }
 
-$week = [
-    '月',
-    '火',
-    '水',
-    '木',
-    '金',
-  ];
-
-  $x = 0;
-  for ($i=0; $i < 5; $i++) { 
-    while($row = $stmh->fetch(PDO::FETCH_ASSOC)){
-        echo ( htmlspecialchars($row[ '月曜日' ]) . ',' );
-        echo ( htmlspecialchars($row[ '火曜日' ]) . ',' );
-        echo ( htmlspecialchars($row[ '水曜日' ]) . ',' );
-        echo ( htmlspecialchars($row[ '木曜日' ]) . ',' );
-        echo ( htmlspecialchars($row[ '金曜日' ]) . ',' );
-    }
-  }
+while($row = $stmh->fetch(PDO::FETCH_ASSOC)){
+    echo ( htmlspecialchars($row[ '月曜日' ]) . ',' );
+}
+while($row = $stmh->fetch(PDO::FETCH_ASSOC)){
+    echo ( htmlspecialchars($row[ '火曜日' ]) . ',' );
+}
+while($row = $stmh->fetch(PDO::FETCH_ASSOC)){
+    echo ( htmlspecialchars($row[ '水曜日' ]) . ',' );
+}
+while($row = $stmh->fetch(PDO::FETCH_ASSOC)){
+    echo ( htmlspecialchars($row[ '木曜日' ]) . ',' );
+}
+while($row = $stmh->fetch(PDO::FETCH_ASSOC)){
+    echo ( htmlspecialchars($row[ '金曜日' ]) . ',' );
+}
