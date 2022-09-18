@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - 'bot/discord/**'
+      - 'bot/line/**'
 
 jobs:
   build:
@@ -25,4 +25,4 @@ jobs:
         with:
           context: bot/
           push: true
-          tags: ghcr.io/launchpencil/zikanwari:bot
+          tags: ghcr.io/launchpencil/zikanwari:line

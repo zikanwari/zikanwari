@@ -1,0 +1,18 @@
+{
+  "name": "zikanwari-line",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/launchpencil/zikanwari.git"
+  },
+  "author": "launchpencil",
+  "bugs": {
+    "url": "https://github.com/launchpencil/zikanwari/issues"
+  },
+  "homepage": "https://github.com/launchpencil/zikanwari#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
