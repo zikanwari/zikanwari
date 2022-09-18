@@ -21,11 +21,11 @@ app.post("/webhook", function(req, res) {
       messages: [
         {
           "type": "text",
-          "text": "Hello, user"
+          "text": "いつか時間割が出るようになるかもしれない"
         },
         {
           "type": "text",
-          "text": "May I help you?"
+          "text": "（かもしれない）"
         }
       ]
     })
