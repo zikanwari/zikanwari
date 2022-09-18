@@ -4,6 +4,9 @@ const app = express()
 const PORT = process.env.PORT || 3000
 const TOKEN = process.env.LINE_ACCESS_TOKEN
 
+var msg1 = '';
+var msg2 = '';
+
 app.use(express.json())
 app.use(express.urlencoded({
   extended: true
@@ -18,16 +21,18 @@ app.post("/webhook", function(req, res) {
   // ユーザーがボットにメッセージを送った場合、返信メッセージを送る
   if (req.body.events[0].type === "message") {
     // 文字列化したメッセージデータ
+    msg1 = 'ちょっと';
+    msg2 = '変えてみた';
     const dataString = JSON.stringify({
       replyToken: req.body.events[0].replyToken,
       messages: [
         {
           "type": "text",
-          "text": "結局"
+          "text": msg1
         },
         {
           "type": "text",
-          "text": "元通り"
+          "text": msg2
         }
       ]
     })
