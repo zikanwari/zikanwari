@@ -31,6 +31,5 @@ $week = [
     while($row = $stmh->fetch(PDO::FETCH_ASSOC)){
         echo ( htmlspecialchars($row[ $week[$x] . '曜日' ]) . ',' );
     }
-    $row = 0;
     $x++;
   }
