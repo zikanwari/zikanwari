@@ -25,7 +25,7 @@ app.post("/webhook", function(req, res) {
   if (req.body.events[0].type === "message") {
 
     var time = 0;
-    
+
     zikan_request.get({
       uri: URL,
       headers: {'Content-type': 'application/json'},
@@ -33,6 +33,7 @@ app.post("/webhook", function(req, res) {
       a = data.split(',');
       a.pop();
       console.log('明日(' + a[6] + ')の時間割は、');
+      msg1 = '明日(' + a[6] + ')の時間割は、';
       for(x in a){
   
           sub = a[x];
