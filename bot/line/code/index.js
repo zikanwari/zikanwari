@@ -1,14 +1,11 @@
+const request = require('request');
+const URL = 'http://zikanwari/api/tomorrow.php';
+
 const https = require("https")
 const express = require("express")
 const app = express()
 const PORT = process.env.PORT || 3000
 const TOKEN = process.env.LINE_ACCESS_TOKEN
-
-const zikan_request = require('request');
-const URL = 'http://zikanwari/api/tomorrow.php';
-
-var msg1 = '';
-var msg2 = '';
 
 app.use(express.json())
 app.use(express.urlencoded({
@@ -20,54 +17,33 @@ app.get("/", (req, res) => {
 })
 
 app.post("/webhook", function(req, res) {
-  res.send("HTTP POST request sent to the webhook URL!");
-
-  var time = 0;
-
-    zikan_request.get({
-      uri: URL,
-      headers: {'Content-type': 'application/json'},
-    }, function(err, req, data){
-      a = data.split(',');
-      a.pop();
-      console.log('明日(' + a[6] + ')の時間割は、');
-      //msg1 = 'aaa';
-      msg1 = '明日(' + a[6] + ')の時間割は、';
-      for(x in a){
-  
-          sub = a[x];
-  
-          time++;
-  
-          if (time > 6) {
-            break;
-          }
-  
-          console.log(time + '時間目：' + sub);
-          msg2 = 'データ取得';
-  
-      }}); 
-      
+  res.send("HTTP POST request sent to the webhook URL!")
   // ユーザーがボットにメッセージを送った場合、返信メッセージを送る
   if (req.body.events[0].type === "message") {
-
     // 文字列化したメッセージデータ
+    var time = 0;
+  
+  request.get({
+    uri: URL,
+    headers: {'Content-type': 'application/json'},
+    }, function(err, req, data){
+    a = data.split(',');
+    a.pop();
     const dataString = JSON.stringify({
       replyToken: req.body.events[0].replyToken,
       messages: [
         {
           "type": "text",
-          "text": msg1
+          "text": '明日(' + a[6] + ')の時間割は、'
         },
         {
           "type": "text",
-          "text": msg2
+          "text": "May I help you?"
         }
       ]
     })
+  });
 
-    console.log(msg1);
-    console.log(msg2);
     // リクエストヘッダー
     const headers = {
       "Content-Type": "application/json",
