@@ -7,7 +7,7 @@ const TOKEN = process.env.LINE_ACCESS_TOKEN
 const zikan_request = require('request');
 const URL = 'http://zikanwari/api/tomorrow.php';
 
-var msg1;
+var msg1 = '';
 var msg2 = '';
 
 app.use(express.json())
@@ -44,12 +44,12 @@ app.post("/webhook", function(req, res) {
             break;
           }
   
-          console.log(time + '時間目：' + sub + '\n');
+          console.log(time + '時間目：' + sub);
   
       }}); 
 
     // 文字列化したメッセージデータ
-    msg2 = 'データ取得中';
+    msg2 = 'データ取得';
     const dataString = JSON.stringify({
       replyToken: req.body.events[0].replyToken,
       messages: [
