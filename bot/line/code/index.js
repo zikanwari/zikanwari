@@ -8,7 +8,7 @@ const zikan_request = require('request');
 const URL = 'http://zikanwari/api/tomorrow.php';
 
 var send1 = '取得';
-var send2 = 'してるのだろうか';
+var send2 = '';
 
 app.use(express.json())
 app.use(express.urlencoded({
@@ -51,11 +51,12 @@ function getdata(msg1, msg2, replyToken) {
           break;
         }
 
-        msg2 += time + '時間目：' + sub;
+        msg2 += time + '時間目：' + sub + '\n';
     }
     
 
     console.log(req.body.events);
+    console.log(replyToken);
     // 文字列化したメッセージデータ
     const dataString = JSON.stringify({
       replyToken: replyToken,
