@@ -41,7 +41,7 @@ app.post("/webhook", function(req, res) {
           break;
         }
 
-        msg2 += time + '時間目：' + sub + '\n';
+        msg2 += time + "時間目：" + sub + "\n";
 
       }});
     const dataString = JSON.stringify({
