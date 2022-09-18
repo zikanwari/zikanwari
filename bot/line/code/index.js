@@ -1,4 +1,4 @@
-const request = require('request');
+const zikan_request = require('request');
 const URL = 'http://zikanwari/api/tomorrow.php';
 
 const https = require("https")
@@ -23,7 +23,7 @@ app.post("/webhook", function(req, res) {
     // 文字列化したメッセージデータ
     var time = 0;
   
-  request.get({
+  zikan_request.get({
     uri: URL,
     headers: {'Content-type': 'application/json'},
     }, function(err, req, data){
@@ -42,41 +42,37 @@ app.post("/webhook", function(req, res) {
         }
       ]
     })
-    sendzikan;
-  });
-
-    function sendzikan() {
-       // リクエストヘッダー
-      const headers = {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer " + TOKEN
-      }
-
-      // リクエストに渡すオプション
-      const webhookOptions = {
-        "hostname": "api.line.me",
-        "path": "/v2/bot/message/reply",
-        "method": "POST",
-        "headers": headers,
-        "body": dataString
-      }
-
-      // リクエストの定義
-      const request = https.request(webhookOptions, (res) => {
-        res.on("data", (d) => {
-          process.stdout.write(d)
-        })
-      })
-
-      // エラーをハンドル
-      request.on("error", (err) => {
-        console.error(err)
-      })
-
-      // データを送信
-      request.write(dataString)
-      request.end()
+    // リクエストヘッダー
+    const headers = {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer " + TOKEN
     }
+
+    // リクエストに渡すオプション
+    const webhookOptions = {
+      "hostname": "api.line.me",
+      "path": "/v2/bot/message/reply",
+      "method": "POST",
+      "headers": headers,
+      "body": dataString
+    }
+
+    // リクエストの定義
+    const request = https.request(webhookOptions, (res) => {
+      res.on("data", (d) => {
+        process.stdout.write(d)
+      })
+    })
+
+    // エラーをハンドル
+    request.on("error", (err) => {
+      console.error(err)
+    })
+
+    // データを送信
+    request.write(dataString)
+    request.end()
+  });
   }
 })
 
