@@ -27,7 +27,7 @@ $week = [
   ];
 
   $x = 0;
-  for ($i=0; $i < 5; $i++) { 
+  while ($x < 5) { 
     while($row = $stmh->fetch(PDO::FETCH_ASSOC)){
         echo ( htmlspecialchars($row[ $week[$x] . '曜日' ]) . ',' );
     }
