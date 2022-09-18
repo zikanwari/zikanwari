@@ -7,6 +7,9 @@ const app = express()
 const PORT = process.env.PORT || 3000
 const TOKEN = process.env.LINE_ACCESS_TOKEN
 
+var msg1;
+var msg2;
+
 app.use(express.json())
 app.use(express.urlencoded({
   extended: true
@@ -27,8 +30,7 @@ app.post("/webhook", function(req, res) {
   }, function(err, req, data){
     a = data.split(',');
     a.pop();
-    var msg1 = '明日(' + a[6] + ')の時間割は、';
-    var msg2;
+    msg1 = '明日(' + a[6] + ')の時間割は、';
     for(x in a){
 
         sub = a[x];
