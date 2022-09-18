@@ -33,7 +33,8 @@ app.post("/webhook", function(req, res) {
       a = data.split(',');
       a.pop();
       console.log('明日(' + a[6] + ')の時間割は、');
-      msg1 = '明日(' + a[6] + ')の時間割は、';
+      //msg1 = '明日(' + a[6] + ')の時間割は、';
+      msg1 = 'aaa';
       for(x in a){
   
           sub = a[x];
