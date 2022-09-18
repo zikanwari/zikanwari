@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000
 const TOKEN = process.env.LINE_ACCESS_TOKEN
 
 var msg1;
-var msg2;
+var msg2 = '';
 
 app.use(express.json())
 app.use(express.urlencoded({
@@ -41,7 +41,7 @@ app.post("/webhook", function(req, res) {
           break;
         }
 
-        msg2 += time + '時間目：' + sub;
+        msg2 += time + '時間目：' + sub + '\n';
 
       }});
     const dataString = JSON.stringify({
