@@ -23,7 +23,7 @@ app.post("/webhook", function(req, res) {
   res.send("HTTP POST request sent to the webhook URL!")
   // ユーザーがボットにメッセージを送った場合、返信メッセージを送る
   if (req.body.events[0].type === "message") {
-    getdata(send1, send2)
+    getdata(send1, send2, req.body.events[0].replyToken)
   }
 })
 
@@ -31,7 +31,7 @@ app.listen(PORT, () => {
   console.log(`Example app listening at http://localhost:${PORT}`)
 })
 
-function getdata(msg1, msg2) {
+function getdata(msg1, msg2, replyToken) {
     var time = 0;
   
   zikan_request.get({
@@ -58,7 +58,7 @@ function getdata(msg1, msg2) {
     console.log(req.body.events);
     // 文字列化したメッセージデータ
     const dataString = JSON.stringify({
-      replyToken: req.body.events,
+      replyToken: replyToken,
       messages: [
         {
           "type": "text",
