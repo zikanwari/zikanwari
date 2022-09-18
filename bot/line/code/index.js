@@ -7,8 +7,8 @@ const app = express()
 const PORT = process.env.PORT || 3000
 const TOKEN = process.env.LINE_ACCESS_TOKEN
 
-var msg1;
-var msg2;
+let msg1;
+let msg2;
 
 app.use(express.json())
 app.use(express.urlencoded({
@@ -27,9 +27,9 @@ app.post("/webhook", function(req, res) {
     var time = 0;
   
     zikan_request.get({
-    uri: URL,
-    headers: {'Content-type': 'application/json'},
-  }, function(err, req, data){
+      uri: URL,
+      headers: {'Content-type': 'application/json'},
+    }, function(err, req, data){
     a = data.split(',');
     a.pop();
     msg1 = '明日(' + a[6] + ')の時間割は、';
