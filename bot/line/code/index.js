@@ -44,13 +44,12 @@ app.post("/webhook", function(req, res) {
             break;
           }
   
-          console.log(time + '時間目：' + sub);
+          console.log(time + '時間目：' + sub + '\n');
   
       }}); 
 
     // 文字列化したメッセージデータ
-    msg1 = '裏で';
-    msg2 = 'データ取得';
+    msg2 = 'データ取得中';
     const dataString = JSON.stringify({
       replyToken: req.body.events[0].replyToken,
       messages: [
