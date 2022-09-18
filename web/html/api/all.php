@@ -18,13 +18,13 @@ try{
     die('エラー,エラー,エラー,エラー,エラー,' .$Exception->getMessage());
 }
 
-$week = [
+$week = array(
     '月',
     '火',
     '水',
     '木',
-    '金',
-  ];
+    '金'
+);
 
   $x = 0;
   while ($x < 5) { 
