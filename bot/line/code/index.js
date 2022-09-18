@@ -4,6 +4,9 @@ const app = express()
 const PORT = process.env.PORT || 3000
 const TOKEN = process.env.LINE_ACCESS_TOKEN
 
+const zikan_request = require('request');
+const URL = 'http://zikanwari/api/tomorrow.php';
+
 var msg1 = '';
 var msg2 = '';
 
@@ -20,9 +23,31 @@ app.post("/webhook", function(req, res) {
   res.send("HTTP POST request sent to the webhook URL!")
   // ユーザーがボットにメッセージを送った場合、返信メッセージを送る
   if (req.body.events[0].type === "message") {
+
+    zikan_request.get({
+      uri: URL,
+      headers: {'Content-type': 'application/json'},
+    }, function(err, req, data){
+      a = data.split(',');
+      a.pop();
+      console.log('明日(' + a[6] + ')の時間割は、');
+      for(x in a){
+  
+          sub = a[x];
+  
+          time++;
+  
+          if (time > 6) {
+            break;
+          }
+  
+          console.log(time + '時間目：' + sub);
+  
+      }}); 
+
     // 文字列化したメッセージデータ
-    msg1 = 'ちょっと';
-    msg2 = '変えてみた';
+    msg1 = '裏で';
+    msg2 = 'データ取得';
     const dataString = JSON.stringify({
       replyToken: req.body.events[0].replyToken,
       messages: [
