@@ -7,7 +7,7 @@ const TOKEN = process.env.LINE_ACCESS_TOKEN
 const zikan_request = require('request');
 const URL = 'http://zikanwari/api/tomorrow.php';
 
-var msg1 = '';
+var msg1;
 var msg2 = '';
 
 app.use(express.json())
