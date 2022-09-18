@@ -23,6 +23,6 @@ jobs:
           images: ghcr.io/launchpencil/zikanwari
       - uses: docker/build-push-action@v2
         with:
-          context: bot/
+          context: bot/line
           push: true
           tags: ghcr.io/launchpencil/zikanwari:line
