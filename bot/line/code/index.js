@@ -33,8 +33,8 @@ app.post("/webhook", function(req, res) {
       a = data.split(',');
       a.pop();
       console.log('明日(' + a[6] + ')の時間割は、');
-      //msg1 = '明日(' + a[6] + ')の時間割は、';
-      msg1 = 'aaa';
+      //msg1 = 'aaa';
+      msg1 = '明日(' + a[6] + ')の時間割は、';
       for(x in a){
   
           sub = a[x];
@@ -46,11 +46,11 @@ app.post("/webhook", function(req, res) {
           }
   
           console.log(time + '時間目：' + sub);
+          msg2 = 'データ取得';
   
       }}); 
 
     // 文字列化したメッセージデータ
-    msg2 = 'データ取得';
     const dataString = JSON.stringify({
       replyToken: req.body.events[0].replyToken,
       messages: [
@@ -65,6 +65,8 @@ app.post("/webhook", function(req, res) {
       ]
     })
 
+    console.log(msg1);
+    console.log(msg2);
     // リクエストヘッダー
     const headers = {
       "Content-Type": "application/json",
