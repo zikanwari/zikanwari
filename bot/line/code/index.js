@@ -24,6 +24,8 @@ app.post("/webhook", function(req, res) {
   // ユーザーがボットにメッセージを送った場合、返信メッセージを送る
   if (req.body.events[0].type === "message") {
 
+    var time = 0;
+    
     zikan_request.get({
       uri: URL,
       headers: {'Content-type': 'application/json'},
