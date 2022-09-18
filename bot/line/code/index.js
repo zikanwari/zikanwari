@@ -42,38 +42,41 @@ app.post("/webhook", function(req, res) {
         }
       ]
     })
+    sendzikan;
   });
 
-    // リクエストヘッダー
-    const headers = {
-      "Content-Type": "application/json",
-      "Authorization": "Bearer " + TOKEN
-    }
+    function sendzikan() {
+       // リクエストヘッダー
+      const headers = {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + TOKEN
+      }
 
-    // リクエストに渡すオプション
-    const webhookOptions = {
-      "hostname": "api.line.me",
-      "path": "/v2/bot/message/reply",
-      "method": "POST",
-      "headers": headers,
-      "body": dataString
-    }
+      // リクエストに渡すオプション
+      const webhookOptions = {
+        "hostname": "api.line.me",
+        "path": "/v2/bot/message/reply",
+        "method": "POST",
+        "headers": headers,
+        "body": dataString
+      }
 
-    // リクエストの定義
-    const request = https.request(webhookOptions, (res) => {
-      res.on("data", (d) => {
-        process.stdout.write(d)
+      // リクエストの定義
+      const request = https.request(webhookOptions, (res) => {
+        res.on("data", (d) => {
+          process.stdout.write(d)
+        })
       })
-    })
 
-    // エラーをハンドル
-    request.on("error", (err) => {
-      console.error(err)
-    })
+      // エラーをハンドル
+      request.on("error", (err) => {
+        console.error(err)
+      })
 
-    // データを送信
-    request.write(dataString)
-    request.end()
+      // データを送信
+      request.write(dataString)
+      request.end()
+    }
   }
 })
 
