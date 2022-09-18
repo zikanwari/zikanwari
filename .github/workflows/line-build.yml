@@ -1,4 +1,4 @@
-name: Bot CI
+name: LINE CI
 
 on:
   workflow_dispatch:
