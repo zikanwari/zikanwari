@@ -5,11 +5,10 @@ const PORT = process.env.PORT || 3000
 const TOKEN = process.env.LINE_ACCESS_TOKEN
 
 const zikan_request = require('request');
-const { getEnvironmentData } = require("worker_threads")
 const URL = 'http://zikanwari/api/tomorrow.php';
 
-var send1 = '';
-var send2 = '';
+var send1 = '取得';
+var send2 = 'してるのだろうか';
 
 app.use(express.json())
 app.use(express.urlencoded({
@@ -77,7 +76,7 @@ app.listen(PORT, () => {
   console.log(`Example app listening at http://localhost:${PORT}`)
 })
 
-async function getdata(msg1, msg2) {
+function getdata(msg1, msg2) {
   try {
     var time = 0;
   
