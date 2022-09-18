@@ -4,7 +4,7 @@ const app = express()
 const PORT = process.env.PORT || 3000
 const TOKEN = process.env.LINE_ACCESS_TOKEN
 
-const request = require('request');
+const zikan_request = require('request');
 const { getEnvironmentData } = require("worker_threads")
 const URL = 'http://zikanwari/api/tomorrow.php';
 
