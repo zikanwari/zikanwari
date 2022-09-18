@@ -1,12 +1,11 @@
+const zikan_request = require('request');
+const URL = 'http://zikanwari/api/tomorrow.php';
+
 const https = require("https")
 const express = require("express")
 const app = express()
 const PORT = process.env.PORT || 3000
 const TOKEN = process.env.LINE_ACCESS_TOKEN
-
-//honhe
-const request = require('request');
-const URL = 'http://zikanwari/api/tomorrow.php';
 
 app.use(express.json())
 app.use(express.urlencoded({
@@ -22,7 +21,7 @@ app.post("/webhook", function(req, res) {
   if (req.body.events[0].type === "message") {
     var time = 0;
   
-  request.get({
+    zikan_request.get({
     uri: URL,
     headers: {'Content-type': 'application/json'},
   }, function(err, req, data){
