@@ -58,6 +58,7 @@ function getdata(msg1, msg2, replyToken) {
     console.log(req.body.events);
     console.log(replyToken);
     // 文字列化したメッセージデータ
+    msg2 += 'です。'
     const dataString = JSON.stringify({
       replyToken: replyToken,
       messages: [
