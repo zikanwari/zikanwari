@@ -23,7 +23,6 @@ app.post("/webhook", function(req, res) {
   res.send("HTTP POST request sent to the webhook URL!")
   // ユーザーがボットにメッセージを送った場合、返信メッセージを送る
   if (req.body.events[0].type === "message") {
-    console.log(req.body.events[0].message);
     console.log(req.body.events[0].message.text);
     getdata(send1, send2, req.body.events[0].replyToken)
   }
@@ -56,9 +55,6 @@ function getdata(msg1, msg2, replyToken) {
         msg2 += time + '時間目：' + sub + '\n';
     }
     
-
-    console.log(req.body.events);
-    console.log(replyToken);
     // 文字列化したメッセージデータ
     msg2 += 'です。'
     const dataString = JSON.stringify({
