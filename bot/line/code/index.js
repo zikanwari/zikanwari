@@ -24,7 +24,7 @@ app.post("/webhook", function(req, res) {
   // ユーザーがボットにメッセージを送った場合、返信メッセージを送る
   if (req.body.events[0].type === "message") {
     console.log(req.body.events[0].source.userId);
-    console.log(req.body.events[0].message.text);
+    console.log(req.body.events[0].message);
     console.log();
     getdata(send1, send2, req.body.events[0].replyToken)
   }
