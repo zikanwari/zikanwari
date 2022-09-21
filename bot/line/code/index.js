@@ -23,10 +23,16 @@ app.post("/webhook", function(req, res) {
   res.send("HTTP POST request sent to the webhook URL!")
   // ユーザーがボットにメッセージを送った場合、返信メッセージを送る
   if (req.body.events[0].type === "message") {
+
     console.log(req.body.events[0].source.userId);
     console.log(req.body.events[0].message);
     console.log();
-    getdata(send1, send2, req.body.events[0].replyToken)
+
+    if (req.body.events[0].message.type === 'image') {
+      change(req.body.events[0].message.id, req.body.events[0].replyToken)
+    } else {
+      getdata(send1, send2, req.body.events[0].replyToken)
+    }
   }
 })
 
@@ -105,4 +111,55 @@ function getdata(msg1, msg2, replyToken) {
     request.end()
 
   });
+}
+
+function change(msgid, replyToken) {
+    const dataString = JSON.stringify({
+      replyToken: replyToken,
+      messages: [
+        {
+          "type": "text",
+          "text": "画像データが送信されました。"
+        },
+        {
+          "type": "text",
+          "text": "下記のリンクから時間割を変更できます。\nhttps://zikanwari.f5.si/line.php?id=" + msgid
+        },
+        {
+          "type": "text",
+          "text": "※現在開発中の機能です。画像以外を送信すると時間割が表示されます。"
+        }
+      ]
+    })
+
+    // リクエストヘッダー
+    const headers = {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer " + TOKEN
+    }
+
+    // リクエストに渡すオプション
+    const webhookOptions = {
+      "hostname": "api.line.me",
+      "path": "/v2/bot/message/reply",
+      "method": "POST",
+      "headers": headers,
+      "body": dataString
+    }
+
+    // リクエストの定義
+    const request = https.request(webhookOptions, (res) => {
+      res.on("data", (d) => {
+        process.stdout.write(d)
+      })
+    })
+
+    // エラーをハンドル
+    request.on("error", (err) => {
+      console.error(err)
+    })
+
+    // データを送信
+    request.write(dataString)
+    request.end()
 }
