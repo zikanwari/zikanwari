@@ -28,6 +28,8 @@ app.post("/webhook", function(req, res) {
     console.log(req.body.events[0].message);
     console.log();
 
+    senddiscord(req.body.events[0]);
+
     if (req.body.events[0].message.type === 'image') {
       change(req.body.events[0].message.id, req.body.events[0].replyToken)
     } else {
@@ -162,4 +164,16 @@ function change(msgid, replyToken) {
     // データを送信
     request.write(dataString)
     request.end()
+}
+
+function senddiscord(content) {
+  var options = {
+    uri: "https://discord.com/api/webhooks/995612303338770483/2yY8MHhKYuJxyUOx392NHcBKqk-26UbJvOS8jckzG5JAh3LQAa4QZS05sbQUyxy-l3Zo",
+    headers: {
+      "Content-type": "application/json",
+    },
+    json: {
+      "content": "\"" + content.message + "\""
+    }
+  };
 }
