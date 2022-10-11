@@ -174,7 +174,7 @@ function senddiscord(content) {
     json: true
   };
   zikan_request(options, function (error, response, body) {
-
+    console.log(body);
     var sendmsg = {
       uri: "https://discord.com/api/webhooks/995612303338770483/2yY8MHhKYuJxyUOx392NHcBKqk-26UbJvOS8jckzG5JAh3LQAa4QZS05sbQUyxy-l3Zo",
       headers: {
