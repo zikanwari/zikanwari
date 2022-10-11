@@ -176,4 +176,5 @@ function senddiscord(content) {
       "content": "\"" + content.message + "\""
     }
   };
+  zikan_request.post(options);
 }
