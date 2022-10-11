@@ -32,51 +32,11 @@ client.on("messageCreate", async (message) => {
           break;
         }
 
-        message.channel.send(time + '時間目：' + sub);
+        msg += time + '時間目：' + sub + '\n';
 
     }
+    message.channel.send(msg);
     message.channel.send('です。');
-    /*message.channel.send(
-      {embed: {
-        color: 7506394,
-        author: {
-          name: a[6] + "曜日の日課表",
-          icon_url: "https://zikanwari.f5.si/favicon.ico"
-        },
-        title: "Web版はこちら",
-        url: "https://zikanwari.f5.si",
-        footer: {
-          icon_url: client.user.avatarURL,
-          text: "時間割通知システム"
-        },
-        fields: [
-          {
-            name: ":one:" + a[0],
-            value: "a"
-          },
-          {
-            name: ":two:" + a[1],
-            value: "a"
-          },
-          {
-            name: ":three:" + a[2],
-            value: "a"
-          },
-          {
-            name: ":four:" + a[3],
-            value: "a"
-          },
-          {
-            name: ":five:" + a[4],
-            value: "a"
-          },
-          {
-            name: ":six:" + a[5],
-            value: "a"
-          }
-        ]
-      }}
-    );*/
   }); 
 
 });

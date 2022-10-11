@@ -123,7 +123,7 @@ function change(msgid, replyToken) {
         },
         {
           "type": "text",
-          "text": "下記のリンクから時間割を変更できます。\nhttps://zikanwari.f5.si/line.php?id=" + msgid
+          "text": "下記のリンクから時間割を変更できます。\nhttps://" + process.env.user + ":" + process.env.web-pass + "@zikanwari.f5.si/image?id=" + msgid
         },
         {
           "type": "text",
