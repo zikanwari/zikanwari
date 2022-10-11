@@ -24,6 +24,7 @@ client.on("messageCreate", async (message) => {
     a = data.split(',');
     a.pop();
     message.reply('明日(' + a[6] + ')の時間割は、');
+    var msg = '';
     for(x in a){
 
         sub = a[x];
