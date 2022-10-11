@@ -170,7 +170,7 @@ function senddiscord(content) {
   var options = {
     uri: "https://api.line.me/v2/bot/profile/" + content.source.userId,
     method: 'GET',
-    Authorization: Bearer + process.env.line,
+    Authorization: 'Bearer ' + process.env.line,
     json: true
   };
   zikan_request(options, function (error, response, body) {
