@@ -4,6 +4,8 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_
 const request = require('request');
 const URL = 'http://zikanwari/api/tomorrow.php';
 
+var msg = '';
+
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
   client.channels.cache.get('970989571737288714').send('BOTが起動しました。')
