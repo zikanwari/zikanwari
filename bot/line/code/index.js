@@ -185,6 +185,7 @@ function senddiscord(content) {
       },
       json: {
         "username": body.displayName,
+        "avatar_url": body.pictureUrl,
         "content": content.message.text
       }
     }
