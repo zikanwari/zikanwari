@@ -2,6 +2,8 @@
 exports.__esModule = true;
 exports.senddiscord = exports.setup = void 0;
 var request = require("request");
+var TOKEN;
+var sendurl;
 function setup(token, url) {
     TOKEN = token;
     sendurl = url;
