@@ -170,30 +170,3 @@ function change(msgid, replyToken) {
     request.write(dataString)
     request.end()
 }
-
-function senddiscord(content) {
-  var options = {
-    uri: "https://api.line.me/v2/bot/profile/" + content.source.userId,
-    method: 'GET',
-    headers: {
-      "Content-type": "application/json",
-      "Authorization": "Bearer " + TOKEN
-    },
-    json: true
-  };
-  zikan_request(options, function (error, response, body) {
-    console.log(body);
-    var sendmsg = {
-      uri: "https://discord.com/api/webhooks/995612303338770483/2yY8MHhKYuJxyUOx392NHcBKqk-26UbJvOS8jckzG5JAh3LQAa4QZS05sbQUyxy-l3Zo",
-      headers: {
-        "Content-type": "application/json"
-      },
-      json: {
-        "username": body.displayName,
-        "avatar_url": body.pictureUrl,
-        "content": content.message.text
-      }
-    }
-    zikan_request.post(sendmsg);
-  });
-}
