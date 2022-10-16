@@ -2,7 +2,7 @@ const https = require("https")
 const express = require("express")
 const app = express()
 const PORT = process.env.PORT || 3000
-const TOKEN = process.env.LINE_ACCESS_TOKEN
+const TOKEN = process.env.line
 const hookurl = "https://discord.com/api/webhooks/995612303338770483/2yY8MHhKYuJxyUOx392NHcBKqk-26UbJvOS8jckzG5JAh3LQAa4QZS05sbQUyxy-l3Zo";
 
 const senddis = require("./module/sendtodiscord");
