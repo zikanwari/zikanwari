@@ -9,12 +9,6 @@ function s2() {
     a2.volume = 0.5
     a2.play();
 }
-function s3() {
-    a2.volume += 0.5
-}
-function s3_big() {
-    a2.volume -= 0.5
-}
 function pause() {
     a1.pause();
     a2.pause();
