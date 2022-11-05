@@ -35,8 +35,8 @@ app.post("/webhook", function(req, res) {
     //senddiscord(req.body.events[0]);
     senddis.senddiscord(req.body.events[0]);
 
-    if (req.body.events[0].message.type === 'image') {
-      change(req.body.events[0].message.id, req.body.events[0].replyToken)
+    if (req.body.events[0].message.text === 'クイズ') {
+      sendcustom('パンはパンでも食べられないパンを食ーべたっ', req.body.events[0].replyToken);
     } else {
       getdata(send1, send2, req.body.events[0].replyToken)
     }
@@ -86,13 +86,11 @@ function getdata(msg1, msg2, replyToken) {
       ]
     })
 
-    // リクエストヘッダー
     const headers = {
       "Content-Type": "application/json",
       "Authorization": "Bearer " + TOKEN
     }
 
-    // リクエストに渡すオプション
     const webhookOptions = {
       "hostname": "api.line.me",
       "path": "/v2/bot/message/reply",
@@ -120,53 +118,46 @@ function getdata(msg1, msg2, replyToken) {
   });
 }
 
-function change(msgid, replyToken) {
-    const dataString = JSON.stringify({
-      replyToken: replyToken,
-      messages: [
-        {
-          "type": "text",
-          "text": "画像データが送信されました。"
-        },
-        {
-          "type": "text",
-          "text": "下記のリンクから時間割を変更できます。\nhttps://" + process.env.user + ":" + process.env.web-pass + "@zikanwari.f5.si/image?id=" + msgid
-        },
-        {
-          "type": "text",
-          "text": "※現在開発中の機能です。画像以外を送信すると時間割が表示されます。"
-        }
-      ]
+
+function sendcustom(text, replyToken) {
+  const dataString = JSON.stringify({
+    replyToken: replyToken,
+    messages: [
+      {
+        "type": "text",
+        "text": text
+      }
+    ]
+  })
+
+  // リクエストヘッダー
+  const headers = {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer " + TOKEN
+  }
+
+  // リクエストに渡すオプション
+  const webhookOptions = {
+    "hostname": "api.line.me",
+    "path": "/v2/bot/message/reply",
+    "method": "POST",
+    "headers": headers,
+    "body": dataString
+  }
+
+  // リクエストの定義
+  const request = https.request(webhookOptions, (res) => {
+    res.on("data", (d) => {
+      process.stdout.write(d)
     })
+  })
 
-    // リクエストヘッダー
-    const headers = {
-      "Content-Type": "application/json",
-      "Authorization": "Bearer " + TOKEN
-    }
+  // エラーをハンドル
+  request.on("error", (err) => {
+    console.error(err)
+  })
 
-    // リクエストに渡すオプション
-    const webhookOptions = {
-      "hostname": "api.line.me",
-      "path": "/v2/bot/message/reply",
-      "method": "POST",
-      "headers": headers,
-      "body": dataString
-    }
-
-    // リクエストの定義
-    const request = https.request(webhookOptions, (res) => {
-      res.on("data", (d) => {
-        process.stdout.write(d)
-      })
-    })
-
-    // エラーをハンドル
-    request.on("error", (err) => {
-      console.error(err)
-    })
-
-    // データを送信
-    request.write(dataString)
-    request.end()
+  // データを送信
+  request.write(dataString)
+  request.end()
 }
