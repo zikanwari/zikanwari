@@ -35,12 +35,14 @@ app.post("/webhook", function(req, res) {
     //senddiscord(req.body.events[0]);
     senddis.senddiscord(req.body.events[0]);
 
-    switch (req.body.events[0].message.text) {
-      case 'クイズ':
+    var msgtxt = req.body.events[0].message.text;
+
+    switch (true) {
+      case /クイズ/.test(msgtxt):
           sendcustom('パンはパンでも食べられないパンを食ーべたっ', req.body.events[0].replyToken);
           break;
-      case 'SDGsガチャ':
-          sendcustom(sdgs());
+      case /sdgs/gi.test(msgtxt):
+          sendcustom(sdgs(), req.body.events[0].replyToken);
           break;
   
       default:
