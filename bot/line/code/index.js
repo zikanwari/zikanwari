@@ -35,12 +35,18 @@ app.post("/webhook", function(req, res) {
     //senddiscord(req.body.events[0]);
     senddis.senddiscord(req.body.events[0]);
 
-    if (req.body.events[0].message.text === 'クイズ') {
-      sendcustom('パンはパンでも食べられないパンを食ーべたっ', req.body.events[0].replyToken);
-    } else {
-      getdata(send1, send2, req.body.events[0].replyToken)
-    }
-  }
+    switch (req.body.events[0].message.text) {
+      case 'クイズ':
+          sendcustom('パンはパンでも食べられないパンを食ーべたっ', req.body.events[0].replyToken);
+          break;
+      case 'SDGsガチャ':
+          sendcustom(sdgs());
+          break;
+  
+      default:
+          getdata(send1, send2, req.body.events[0].replyToken)
+          break;
+  }}
 })
 
 app.listen(PORT, () => {
@@ -160,4 +166,13 @@ function sendcustom(text, replyToken) {
   // データを送信
   request.write(dataString)
   request.end()
+}
+
+function sdgs() {
+  kamiku = ['質の高い教育を','健康と福祉を','住み続ける街づくりを','働きがいも経済成長も','海の豊かさを','平和と公正を','飢餓を','ジェンダー平等を','安全な水とトイレを']
+  shimoku = ["ゼロに","なくそう","実現しよう","みんなに","世界中に","すべての人に"]
+  r1 = Math.floor(Math.random() * kamiku.length)
+  r2 = Math.floor(Math.random() * shimoku.length)
+
+  return kamiku[r1] + shimoku[r2];
 }
