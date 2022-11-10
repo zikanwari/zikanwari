@@ -13,6 +13,7 @@ const URL = 'http://zikanwari/api/tomorrow.php';
 
 var send1 = '取得';
 var send2 = '';
+var sdgs10;
 
 app.use(express.json())
 app.use(express.urlencoded({
@@ -42,10 +43,21 @@ app.post("/webhook", function(req, res) {
           sendcustom('パンはパンでも食べられないパンを食ーべたっ', req.body.events[0].replyToken);
           break;
       case /sdgs/gi.test(msgtxt):
-          sendcustom(sdgs(), req.body.events[0].replyToken);
+          if (/10 | １０ | 十/.test(msgtxt)) {
+            sdgs10 = null;
+            for (let i = 0; i < 11; i++) {
+              sdgs10 += sdgs() + '\n';
+            }
+            sendcustom(sdgs10, req.body.events[0].replyToken)
+          } else {
+            sendcustom(sdgs(), req.body.events[0].replyToken);
+          }
           break;
   
       default:
+          if (/[月火水木金土日]曜日/.test(msgtxt)) {
+            console.log('曜日 was sent(?)');
+          }
           getdata(send1, send2, req.body.events[0].replyToken)
           break;
   }}

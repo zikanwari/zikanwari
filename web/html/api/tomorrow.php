@@ -30,6 +30,10 @@ $week = [
    
   $date = date('w');
 
+if(isset($_GET['w'])) {
+    $date = $_GET['w'];
+}
+
 while($row = $stmh->fetch(PDO::FETCH_ASSOC)){
     echo ( htmlspecialchars($row[ $week[$date] . '曜日' ]) . ',' );
 }
