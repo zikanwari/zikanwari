@@ -43,7 +43,7 @@ app.post("/webhook", function(req, res) {
           sendcustom('パンはパンでも食べられないパンを食ーべたっ', req.body.events[0].replyToken);
           break;
       case /sdgs/gi.test(msgtxt):
-          if (/10 | １０ | 十/.test(msgtxt)) {
+          if (/10|１０|十/.test(msgtxt)) {
             sdgs10 = null;
             for (let i = 0; i < 11; i++) {
               sdgs10 += sdgs() + '\n';
