@@ -14,6 +14,7 @@ const URL = 'http://zikanwari/api/tomorrow.php';
 var send1 = '取得';
 var send2 = '';
 var sdgs10;
+var week = {月:0, 火:1, 水:2, 木:3, 金:4};
 
 app.use(express.json())
 app.use(express.urlencoded({
@@ -55,10 +56,14 @@ app.post("/webhook", function(req, res) {
           break;
   
       default:
-          if (/[月火水木金土日]曜日/.test(msgtxt)) {
+          if (/[月火水木金]曜/.test(msgtxt)) {
             console.log('曜日 was sent(?)');
+            var youbi = msgtxt.match(/([月火水木金])曜/);
+            var weeknum = youbi[1];
+            URL += '?w=' + week.weeknum
           }
           getdata(send1, send2, req.body.events[0].replyToken)
+          const URL = 'http://zikanwari/api/tomorrow.php';
           break;
   }}
 })
