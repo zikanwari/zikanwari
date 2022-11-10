@@ -55,16 +55,13 @@ app.post("/webhook", function(req, res) {
           break;
   
       default:
-          var URL = 'http://zikanwari/api/tomorrow.php';
           if (/[月火水木金]曜/.test(msgtxt)) {
             console.log('曜日 was sent(?)');
             var youbi = msgtxt.match(/([月火水木金])曜/);
             var weeknum = youbi[1];
-            URL = 'http://zikanwari/api/tomorrow.php?w=' + week.weeknum
-            getdata(send1, send2, req.body.events[0].replyToken)
-            URL = 'http://zikanwari/api/tomorrow.php';
+            getdata(send1, send2, req.body.events[0].replyToken, 'http://zikanwari/api/tomorrow.php?w=' + week.weeknum)
           } else {
-            getdata(send1, send2, req.body.events[0].replyToken)
+            getdata(send1, send2, req.body.events[0].replyToken, 'http://zikanwari/api/tomorrow.php')
           }
           
           break;
@@ -75,11 +72,11 @@ app.listen(PORT, () => {
   console.log(`LineBot app listening at http://localhost:${PORT}`)
 })
 
-function getdata(msg1, msg2, replyToken) {
+function getdata(msg1, msg2, replyToken, url) {
     var time = 0;
   
   zikan_request.get({
-    uri: URL,
+    uri: url,
     headers: {'Content-type': 'application/json'},
   }, function(err, req, data){
     a = data.split(',');
