@@ -9,7 +9,6 @@ const senddis = require("linetodiscord");
 senddis.setup(hookurl);
 
 const zikan_request = require('request');
-const URL = 'http://zikanwari/api/tomorrow.php';
 
 var send1 = '取得';
 var send2 = '';
@@ -56,13 +55,14 @@ app.post("/webhook", function(req, res) {
           break;
   
       default:
+          var URL = 'http://zikanwari/api/tomorrow.php';
           if (/[月火水木金]曜/.test(msgtxt)) {
             console.log('曜日 was sent(?)');
             var youbi = msgtxt.match(/([月火水木金])曜/);
             var weeknum = youbi[1];
             URL += '?w=' + week.weeknum
             getdata(send1, send2, req.body.events[0].replyToken)
-            const URL = 'http://zikanwari/api/tomorrow.php';
+            URL = 'http://zikanwari/api/tomorrow.php';
           } else {
             getdata(send1, send2, req.body.events[0].replyToken)
           }
