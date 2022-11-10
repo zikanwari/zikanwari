@@ -59,7 +59,7 @@ app.post("/webhook", function(req, res) {
             console.log('曜日 was sent(?)');
             var youbi = msgtxt.match(/([月火水木金])曜/);
             var weeknum = youbi[1];
-            getdata(send1, send2, req.body.events[0].replyToken, 'http://zikanwari/api/tomorrow.php?w=' + week.weeknum)
+            getdata(send1, send2, req.body.events[0].replyToken, 'http://zikanwari/api/tomorrow.php?w=' + week[weeknum])
           } else {
             getdata(send1, send2, req.body.events[0].replyToken, 'http://zikanwari/api/tomorrow.php')
           }
