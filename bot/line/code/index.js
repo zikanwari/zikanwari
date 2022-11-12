@@ -42,6 +42,9 @@ app.post("/webhook", function(req, res) {
       case /クイズ/.test(msgtxt):
           sendcustom('パンはパンでも食べられないパンを食ーべたっ', req.body.events[0].replyToken);
           break;
+      case /使い方|つかいかた/.test(msgtxt):
+            sendcustom('使い方→これが出ます\nSDGsガチャ→ランダムな単語が出ます\nSDGs10連ガチャ→10連です\n○曜日の日課表→その曜日の時間割が出ます\nそれ以外→明日の時間割が出ます', req.body.events[0].replyToken);
+            break;
       case /sdgs/gi.test(msgtxt):
           if (/10|１０|十/.test(msgtxt)) {
             sdgs10 = '';
