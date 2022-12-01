@@ -4,7 +4,8 @@ const ten = new Audio('../mp3/ten.mp3');
 
 alt.addEventListener('loadeddata', (e)=> {
     document.getElementById("ctime").textContent = convertTime(alt.currentTime);
-  });
+    document.getElementById("ctime").max = alt.duration;
+});
 
 function change(part) {
     switch (part) {
@@ -47,6 +48,7 @@ function play() {
 
     playtimer = setInterval(function(){
         document.getElementById("ctime").textContent = convertTime(alt.currentTime);
+        document.getElementById("bar").value = Math.floor( (audioElement.currentTime / audioElement.duration) * audioElement.duration);
       }, 500);
 }
 function pause() {
