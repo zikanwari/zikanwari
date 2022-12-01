@@ -48,7 +48,7 @@ app.post("/webhook", function(req, res) {
       case /sdgs/gi.test(msgtxt):
           if (/10|１０|十/.test(msgtxt)) {
             sdgs10 = '';
-            for (let i = 0; i < 11; i++) {
+            for (let i = 0; i < 10; i++) {
               sdgs10 += sdgs() + '\n';
             }
             sendcustom(sdgs10, req.body.events[0].replyToken)
