@@ -53,6 +53,8 @@ function play() {
 }
 slider_progress.addEventListener("input", e => {
     alt.currentTime = document.getElementById("bar").value;
+    sop.currentTime = document.getElementById("bar").value;
+    ten.currentTime = document.getElementById("bar").value;
   });
 function pause() {
     alt.pause();
