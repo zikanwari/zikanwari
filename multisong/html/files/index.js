@@ -2,6 +2,20 @@ const alt = new Audio('../mp3/alt.mp3');
 const sop = new Audio('../mp3/sop.mp3');
 const ten = new Audio('../mp3/ten.mp3');
 
+const convertTime = function(time_position) {
+
+    time_position = Math.floor(time_position);
+    var res = '';
+
+    if( 60 <= time_position ) {
+      res = Math.floor(time_position / 60);
+      res += ":" + Math.floor(time_position % 60).toString().padStart( 2, '0');
+    } else {
+      res = "0:" + Math.floor(time_position % 60).toString().padStart( 2, '0');
+    }
+    return res;
+  };
+
 alt.addEventListener('loadeddata', (e)=> {
     document.getElementById("ctime").textContent = convertTime(alt.currentTime);
     document.getElementById("ctime").max = 100;
@@ -64,17 +78,3 @@ function pause() {
     /*a1.currentTime = 0;
     a2.currentTime = 0;*/
 }
-
-const convertTime = function(time_position) {
-
-    time_position = Math.floor(time_position);
-    var res = '';
-
-    if( 60 <= time_position ) {
-      res = Math.floor(time_position / 60);
-      res += ":" + Math.floor(time_position % 60).toString().padStart( 2, '0');
-    } else {
-      res = "0:" + Math.floor(time_position % 60).toString().padStart( 2, '0');
-    }
-    return res;
-  };
