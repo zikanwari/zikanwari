@@ -2,10 +2,8 @@ const alt = new Audio('../mp3/alt.mp3');
 const sop = new Audio('../mp3/sop.mp3');
 const ten = new Audio('../mp3/ten.mp3');
 
-const playback_position = document.getElementById("ctime");
-
 alt.addEventListener('loadeddata', (e)=> {
-    playback_position.textContent = convertTime(alt.currentTime);
+    document.getElementById("ctime").textContent = convertTime(alt.currentTime);
   });
 
 function change(part) {
@@ -48,7 +46,7 @@ function play() {
     ten.play();
 
     playtimer = setInterval(function(){
-        playback_position.textContent = convertTime(alt.currentTime);
+        document.getElementById("ctime").textContent = convertTime(alt.currentTime);
       }, 500);
 }
 function pause() {
