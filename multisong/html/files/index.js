@@ -51,6 +51,9 @@ function play() {
         document.getElementById("bar").value = Math.floor((alt.currentTime / alt.duration)*100);
       }, 500);
 }
+slider_progress.addEventListener("input", e => {
+    alt.currentTime = document.getElementById("bar").value;
+  });
 function pause() {
     alt.pause();
     sop.pause();
