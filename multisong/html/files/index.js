@@ -66,6 +66,7 @@ function play() {
       }, 500);
 }
 document.getElementById("bar").addEventListener("input", e => {
+    clearInterval(playtimer);
     alt.currentTime = document.getElementById("bar").value;
     sop.currentTime = document.getElementById("bar").value;
     ten.currentTime = document.getElementById("bar").value;
