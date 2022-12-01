@@ -44,7 +44,7 @@ function play() {
     ten.play();
 
     playtimer = setInterval(function(){
-        playback_position.textContent = convertTime(audioElement.currentTime);
+        playback_position.textContent = convertTime(alt.currentTime);
       }, 500);
 }
 function pause() {
