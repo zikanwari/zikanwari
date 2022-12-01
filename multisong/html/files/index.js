@@ -18,7 +18,7 @@ const convertTime = function(time_position) {
 
 alt.addEventListener('loadeddata', (e)=> {
     document.getElementById("ctime").textContent = convertTime(alt.currentTime);
-    document.getElementById("ctime").max = 100;
+    document.getElementById("ctime").max = alt.duration;
 });
 
 function change(part) {
@@ -62,7 +62,7 @@ function play() {
 
     playtimer = setInterval(function(){
         document.getElementById("ctime").textContent = convertTime(alt.currentTime);
-        document.getElementById("bar").value = Math.floor((alt.currentTime / alt.duration)*100);
+        document.getElementById("bar").value = Math.floor((alt.currentTime / alt.duration) * alt.duration);
       }, 500);
 }
 document.getElementById("bar").addEventListener("input", e => {
