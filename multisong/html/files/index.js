@@ -63,7 +63,7 @@ function pause() {
 const convertTime = function(time_position) {
 
     time_position = Math.floor(time_position);
-    var res = null;
+    var res = '';
 
     if( 60 <= time_position ) {
       res = Math.floor(time_position / 60);
