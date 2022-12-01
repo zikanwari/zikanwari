@@ -48,7 +48,7 @@ function play() {
 
     playtimer = setInterval(function(){
         document.getElementById("ctime").textContent = convertTime(alt.currentTime);
-        document.getElementById("bar").value = Math.floor( (audioElement.currentTime / audioElement.duration) * audioElement.duration);
+        document.getElementById("bar").value = Math.floor( (alt.currentTime / alt.duration) * alt.duration);
       }, 500);
 }
 function pause() {
