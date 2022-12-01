@@ -4,6 +4,10 @@ const ten = new Audio('../mp3/ten.mp3');
 
 const playback_position = document.getElementById("ctime");
 
+audioElement.addEventListener('loadeddata', (e)=> {
+    playback_position.textContent = convertTime(audioElement.currentTime);
+  });
+
 function change(part) {
     switch (part) {
         case 'alt':
