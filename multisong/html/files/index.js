@@ -18,7 +18,7 @@ const convertTime = function(time_position) {
 
 alt.addEventListener('loadeddata', (e)=> {
     document.getElementById("ctime").textContent = convertTime(alt.currentTime);
-    document.getElementById("ctime").max = alt.duration;
+    document.getElementById("ctime").max = 258;
 });
 
 function change(part) {
