@@ -16,10 +16,6 @@ const convertTime = function(time_position) {
     return res;
   };
 
-alt.addEventListener('loadeddata', (e)=> {
-    document.getElementById("ctime").textContent = convertTime(alt.currentTime);
-});
-
 function change(part) {
     switch (part) {
         case 'alt':
@@ -69,6 +65,7 @@ document.getElementById("bar").addEventListener("input", e => {
     alt.currentTime = document.getElementById("bar").value;
     sop.currentTime = document.getElementById("bar").value;
     ten.currentTime = document.getElementById("bar").value;
+    document.getElementById("ctime").textContent = convertTime(alt.currentTime);
   });
   document.getElementById("bar").addEventListener("change", e => {
     play();
