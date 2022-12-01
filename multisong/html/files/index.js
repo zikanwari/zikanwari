@@ -71,6 +71,9 @@ document.getElementById("bar").addEventListener("input", e => {
     sop.currentTime = document.getElementById("bar").value;
     ten.currentTime = document.getElementById("bar").value;
   });
+  document.getElementById("bar").addEventListener("change", e => {
+    play();
+  });
 function pause() {
     alt.pause();
     sop.pause();
