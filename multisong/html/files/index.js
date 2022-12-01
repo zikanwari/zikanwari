@@ -5,7 +5,7 @@ const ten = new Audio('../mp3/ten.mp3');
 const playback_position = document.getElementById("ctime");
 
 alt.addEventListener('loadeddata', (e)=> {
-    playback_position.textContent = convertTime(audioElement.currentTime);
+    playback_position.textContent = convertTime(alt.currentTime);
   });
 
 function change(part) {
