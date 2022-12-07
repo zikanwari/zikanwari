@@ -19,30 +19,30 @@ const convertTime = function(time_position) {
 function change(part) {
     switch (part) {
         case 'alt':
-            if (alt.volume == 1) {
+            if (alt.muted === false) {
                 document.getElementById(part).style.backgroundColor = '#b2b2b2';
-                alt.volume = 0;
+                alt.muted = true;
             } else {
                 document.getElementById(part).style.backgroundColor = '#faffb7';
-                alt.volume = 1;
+                alt.muted = false;
             }
             break;
         case 'sop':
-            if (sop.volume == 1) {
+            if (sop.muted === false) {
                 document.getElementById(part).style.backgroundColor = '#b2b2b2';
-                sop.volume = 0;
+                sop.muted = true;
             } else {
                 document.getElementById(part).style.backgroundColor = '#faffb7';
-                sop.volume = 1;
+                sop.muted = false;
             }
             break;
         case 'ten':
-            if (ten.volume == 1) {
+            if (ten.muted === false) {
                 document.getElementById(part).style.backgroundColor = '#b2b2b2';
-                ten.volume = 0;
+                ten.muted = true;
             } else {
                 document.getElementById(part).style.backgroundColor = '#faffb7';
-                ten.volume = 1;
+                ten.muted = false;
             }
             break;
         default:
