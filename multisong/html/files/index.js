@@ -61,6 +61,7 @@ function play() {
       }, 500);
 }
 document.getElementById("bar").addEventListener("input", e => {
+    pause();
     clearInterval(playtimer);
     alt.currentTime = document.getElementById("bar").value;
     sop.currentTime = document.getElementById("bar").value;
@@ -74,7 +75,4 @@ function pause() {
     alt.pause();
     sop.pause();
     ten.pause();
-    
-    /*a1.currentTime = 0;
-    a2.currentTime = 0;*/
 }
