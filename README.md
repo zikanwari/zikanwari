@@ -12,6 +12,10 @@ pon
 [![pon-web CI](https://github.com/launchpencil/zikanwari/actions/workflows/web-pon.yml/badge.svg)](https://github.com/launchpencil/zikanwari/actions/workflows/web-pon.yml)
 [![pon-convert CI](https://github.com/launchpencil/zikanwari/actions/workflows/convert-pon.yml/badge.svg)](https://github.com/launchpencil/zikanwari/actions/workflows/convert-pon.yml)
 
+multisong
+
+[![multisong CI](https://github.com/launchpencil/zikanwari/actions/workflows/multisong.yml/badge.svg)](https://github.com/launchpencil/zikanwari/actions/workflows/multisong.yml)
+
 ---
 
 ## 導入にあたって（時間割内）
