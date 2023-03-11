@@ -1,0 +1,42 @@
+body{
+    background-color: rgb(97, 101, 127);
+    height: 100vh;
+}
+main{
+    background-color: rgb(145, 151, 189);
+    height: 77%;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 20px;
+    margin-top: 3vh;
+    padding: 2%;
+}
+p{
+    margin: 0;
+}
+
+
+footer{
+    height: 10vh;
+    width: 95%;
+    margin: 1vh auto 0;
+}
+footer > div {
+    margin: 1%;
+    float: left;
+
+    height: 100%;
+    width: 48%;
+
+    background-color: rgb(145, 151, 189);
+    padding-top: 3vh;
+    padding-bottom: 1vh;
+
+    border-radius: 30px;
+
+    text-align: center;
+    font-size: 5vw;
+}
+footer > div > img {
+    width: 5vh;
+}

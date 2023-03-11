@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" type="text/css" href="files/main.css">
+    <link rel="stylesheet" type="text/css" href="files/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>時間割確認アプリ</title>
+</head>
+<body>
+    <main>
+        <div>
+            時間割情報を取得中…
+        </div>
+    </main>
+    <footer>
+        <div class="time">
+            <img src="files/time.png" alt="menu_time">
+            <p>時間割</p>
+        </div>
+        <div class="other">
+            <img src="files/other.png" alt="menu_other">
+            <p>その他</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+<script>
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js', { scope: '/' });
+    }
+</script>

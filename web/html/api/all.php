@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 try{
     $pdo = new PDO(
         'mysql:host=' . getenv('DB') . ';dbname=zikan;charset=utf8',
