@@ -4,7 +4,6 @@ fetch(`http://10.1.100.224/api/all.php`)
 .then(data => {
     a = data.split(',');
     a.pop();
-    console.log(a[0]);
     for (let index = 0; index < a.length; index++) {
         document.getElementById(index).innerText = a[index];
     }

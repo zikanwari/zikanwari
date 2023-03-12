@@ -1,0 +1,28 @@
+name: LINE CI
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'app/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: launchpencil
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - uses: docker/metadata-action@v3
+        id: meta
+        with:
+          images: ghcr.io/launchpencil/zikanwari
+      - uses: docker/build-push-action@v2
+        with:
+          context: app
+          push: true
+          tags: ghcr.io/launchpencil/zikanwari:app
