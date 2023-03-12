@@ -1,4 +1,4 @@
-name: APP CI
+name: App CI
 
 on:
   workflow_dispatch:
