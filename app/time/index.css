@@ -1,0 +1,20 @@
+.table{
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+.table>div{
+    display: table-row;
+    background-color: #5a74a7;
+}
+.table>div>div{
+    display: table-cell;
+    width: 20vw;
+    height: 9vh;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 10px;
+}
+span{
+    line-height: 1em;
+    color: #cdcdcd;
+}

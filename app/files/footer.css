@@ -1,9 +1,9 @@
 body{
-    background-color: rgb(97, 101, 127);
+    background-color: #2f3d58;
     height: 100vh;
 }
 main{
-    background-color: rgb(145, 151, 189);
+    background-color: #495e88;
     height: 77%;
     width: 90%;
     margin: 0 auto;
@@ -13,11 +13,12 @@ main{
 }
 p{
     margin: 0;
+    color: #cdcdcd;
 }
 
 
 footer{
-    height: 10vh;
+    height: 10vmax;
     width: 95%;
     margin: 1vh auto 0;
 }
@@ -28,7 +29,7 @@ footer > div {
     height: 100%;
     width: 48%;
 
-    background-color: rgb(145, 151, 189);
+    background-color: #354564;
     padding-top: 3vh;
     padding-bottom: 1vh;
 
