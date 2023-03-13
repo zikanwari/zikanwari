@@ -1,6 +1,11 @@
 console.log("hello");
 fetch(`http://10.1.100.224/api/all.php`)
-.then(response => response.text())
+.then(response => {
+    if (!response.ok) {
+        console.error('エラーが発生しました。');
+    }
+    response.text()
+})
 .then(data => {
     a = data.split(',');
     a.pop();
