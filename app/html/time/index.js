@@ -1,10 +1,10 @@
 console.log("hello");
 fetch(`https://zikanwari.f5.si/api/all.php`)
 .then(response => {
-    if( response.status === 200 ) {
-        response.text()
+    if( !res.status === 200 ) {
+        document.getElementById('timetable').innerText= 'エラーが発生しました。エラーコード：' + response.status;
+        return;
     }
-    document.getElementById('timetable').innerText= 'エラーが発生しました。エラーコード：' + response.status;
 })
 .then(data => {
     a = data.split(',');
