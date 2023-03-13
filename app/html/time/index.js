@@ -1,7 +1,7 @@
 console.log("hello");
 fetch(`https://zikanwari.f5.si/api/all.php`)
 .then(response => {
-    if( res.status === 200 ) {
+    if( response.status === 200 ) {
         response.text()
     }
     document.getElementById('timetable').innerText= 'エラーが発生しました。エラーコード：' + response.status;
