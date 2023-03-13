@@ -7,3 +7,4 @@ fetch(`time/index.html`)
 .then(data => {
     document.getElementById('timetable').innerHTML = data;
 });
+synctime();
