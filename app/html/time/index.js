@@ -13,3 +13,6 @@ fetch(`http://10.1.100.224/api/all.php`)
         document.getElementById(index).innerText = a[index];
     }
 })
+.catch(error => {
+    console.error('通信に失敗しました', error);
+});
