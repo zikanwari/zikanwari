@@ -20,7 +20,7 @@ jobs:
       - uses: docker/metadata-action@v3
         id: meta
         with:
-          images: ghcr.io/launchpencil/zikanwari
+          images: ghcr.io/launchpencil/zikanwari:app
       - uses: docker/build-push-action@v2
         with:
           context: app
