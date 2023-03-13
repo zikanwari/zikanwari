@@ -1,3 +1,4 @@
+var msg
 fetch(`https://zikanwari.f5.si/api/all.php`)
 .then(data => {
     a = data.split(',');
@@ -8,6 +9,9 @@ fetch(`https://zikanwari.f5.si/api/all.php`)
 })
 .then(response => {
     if( !res.status === 200 ) {
-        document.getElementById('timetable').innerText= 'エラーが発生しました。エラーコード：' + response.status;
+        msg = 'エラーが発生しました。エラーコード：' + response.status;
     }
+})
+.catch(error => {
+    document.getElementById('timetable').innerText = msg;
 });
