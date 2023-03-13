@@ -14,5 +14,5 @@ fetch(`http://10.1.100.224/api/all.php`)
     }
 })
 .catch(error => {
-    console.error('通信に失敗しました', error);
+    document.getElementById('timetable').innerText= '通信に失敗しました', error;
 });
