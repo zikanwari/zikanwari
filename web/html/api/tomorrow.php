@@ -11,7 +11,7 @@ try{
     die('エラー,エラー,エラー,エラー,エラー,' .$Exception->getMessage());
 }
 try{
-    $sql = "SELECT * FROM zikan.`2-5`";
+    $sql = "SELECT * FROM zikan.`" + getenv('USER') + "`";
     $stmh = $pdo->prepare($sql);
     $stmh->execute();
 }catch(PDOException $Exception){

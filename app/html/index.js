@@ -8,8 +8,17 @@ function syncdata() {
     fetch(`https://zikanwari.f5.si/api/all.php`)
     .then(data => {
         if (isNaN(data)) {
-            document.getElementById('timetable').innerText = 'エラーが発生しました。エラーコード：' + data.status;
-            console.log('エラーが発生しました。エラーコード：' + data.status);
+            switch (data) {
+                case 401:
+                    document.getElementById('timetable').innerText = '認証に失敗しました。ユーザー名またはパスワードが間違っています。';
+                    console.log('エラーが発生しました。エラーコード：' + data.status);
+                    break;
+            
+                default:
+                    document.getElementById('timetable').innerText = 'エラーが発生しました。エラーコード：' + data.status;
+                    console.log('エラーが発生しました。エラーコード：' + data.status);
+                    break;
+            }
         } else {
             a = data.split(',');
             a.pop();
