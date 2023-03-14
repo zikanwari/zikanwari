@@ -2,6 +2,7 @@ fetch(`time/index.html`)
 .then(response => response.text())
 .then(data => {
     document.getElementById('timetable').innerHTML = data;
+    syncdata();
 });
 function syncdata() {
     fetch(`https://zikanwari.f5.si/api/all.php`)
