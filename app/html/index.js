@@ -19,5 +19,9 @@ function syncdata() {
             console.log('エラーが発生しました。エラーコード：' + response.status);
             exit;
         }
+    })
+    .catch(error => {
+        document.getElementById('timetable').innerText = 'エラーが発生しました。エラーコード：' + error;
+        console.log('エラーが発生しました。エラーコード：' + error);
     });
 }
