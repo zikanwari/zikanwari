@@ -5,8 +5,8 @@ if(!isset($_GET['user']) || !isset($_GET['pass'])) {
 try {
     $pdo = new PDO(
         'mysql:host=' . getenv('DB') . ';dbname=zikan;charset=utf8',
-        $_GET['user'],
-        $_GET['pass']
+        null,
+        null
     );
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
@@ -14,8 +14,10 @@ try {
     die('エラー,' . $Exception->getMessage());
 }
 try {
-    $sql = "SELECT * FROM zikan." . $pdo->quote($_GET['user']) . "";
+    $sql = "SELECT * FROM zikan." . $pdo->quote($_GET['user']) . " WHERE user = :user AND pass = :pass";
     $stmh = $pdo->prepare($sql);
+    $stmh->bindParam(':user', $_GET['user'], PDO::PARAM_STR);
+    $stmh->bindParam(':pass', $_GET['pass'], PDO::PARAM_STR);
     $stmh->execute();
 } catch (PDOException $Exception) {
     die('エラー,' . $Exception->getMessage());
