@@ -11,12 +11,12 @@ function syncdata() {
         for (let index = 0; index < a.length; index++) {
             document.getElementById(index).innerText = a[index];
         }
-        });
+    })
     .then(response => {
         if( !response.ok ) {
             document.getElementById('timetable').innerText = 'エラーが発生しました。エラーコード：' + response.status;
             console.log('エラーが発生しました。エラーコード：' + response.status);
             exit;
         }
-    })
+    });
 }
