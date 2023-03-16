@@ -5,8 +5,8 @@ if(!isset($_GET['user']) || !isset($_GET['pass'])) {
 try {
     $pdo = new PDO(
         'mysql:host=' . getenv('DB') . ';dbname=zikan;charset=utf8',
-        null,
-        null
+        $_GET['user'],
+        $_GET['pass']
     );
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
