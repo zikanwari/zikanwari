@@ -14,7 +14,7 @@ try {
     die('エラー,' . $Exception->getMessage());
 }
 try {
-    $sql = "SELECT * FROM zikan.`" . $pdo->quote($_GET['user']) . "` WHERE user = :user AND pass = :pass";
+    $sql = "SELECT * FROM zikan." . $pdo->quote($_GET['user']) . " WHERE user = :user AND pass = :pass";
     $stmh = $pdo->prepare($sql);
     $stmh->bindParam(':user', $_GET['user'], PDO::PARAM_STR);
     $stmh->bindParam(':pass', $_GET['pass'], PDO::PARAM_STR);
