@@ -16,9 +16,7 @@ try {
 try {
     $sql = "SELECT * FROM zikan." . $pdo->quote($_GET['user']) . " WHERE user = :user AND pass = :pass";
     $stmh = $pdo->prepare($sql);
-    $stmh->bindParam(':user', $_GET['user'], PDO::PARAM_STR);
-    $stmh->bindParam(':pass', $_GET['pass'], PDO::PARAM_STR);
-    $stmh->execute();
+    $stmh->execute(array(':user' => $_GET['user'], ':pass' => $_GET['pass']));
 } catch (PDOException $Exception) {
     die('エラー,' . $Exception->getMessage());
 }
