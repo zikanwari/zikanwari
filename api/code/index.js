@@ -33,7 +33,7 @@ const server = http.createServer((req, res) => {
 
         results.forEach((row) => {
             res.write(
-                `${row.月曜日},${row.火曜日},${row.水曜日},${row.木曜日},${row.金曜日},\n`
+                `${row.月曜日},${row.火曜日},${row.水曜日},${row.木曜日},${row.金曜日},`
               );
         });
 
