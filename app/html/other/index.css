@@ -14,7 +14,7 @@
   }
   
   /* テーブルの各セルのスタイル */
-  .table > div > p {
+  .table > div > div {
     display: table-cell;
     padding: 20px;
     text-align: left; /* 文字を左側に移動 */
