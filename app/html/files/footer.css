@@ -1,43 +1,43 @@
-body{
-    background-color: #2f3d58;
+body {
+    background-color: #1f2937;
     height: 100vh;
-}
-main{
-    background-color: #495e88;
+    }
+    
+    main {
+    background-color: #2c3e50;
     height: 77%;
     width: 90%;
     margin: 0 auto;
     border-radius: 20px;
     margin-top: 3vh;
     padding: 2%;
-}
-p{
+    }
+    
+    p {
     margin: 0;
-    color: #cdcdcd;
-}
-
-
-footer{
+    color: #b0bec5;
+    }
+    
+    footer {
     height: 10vmax;
     width: 95%;
     margin: 1vh auto 0;
-}
-footer > div {
+    }
+    
+    footer > div {
     margin: 1%;
     float: left;
-
     height: 100%;
     width: 48%;
-
-    background-color: #354564;
+    background-color: #2c3e50;
     padding-top: 3vh;
     padding-bottom: 1vh;
-
     border-radius: 30px;
-
     text-align: center;
     font-size: 5vw;
-}
-footer > div > img {
+    color: #b0bec5;
+    }
+    
+    footer > div > img {
     width: 5vh;
-}
+    }
