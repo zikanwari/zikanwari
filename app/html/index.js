@@ -15,7 +15,6 @@ function syncdata() {
             }
     })
     .catch(error => {
-        document.getElementById('timetable').innerText = 'エラーが発生しました。エラーコード：' + error;
-        console.log('エラーが発生しました。エラーコード：' + error);
+        document.getElementById('timetable').innerText = '時間割のデータ取得に失敗しました。';
     });
 }
