@@ -5,12 +5,18 @@ self.addEventListener('install', event => {
     const cache = await caches.open(CACHE_NAME);
     cache.addAll([
       '/',
-      { url: '/zikanwari/?user=2-5&pass=tokoroten', cache: "no-cache" }
+      { url: '/zikanwari/', cache: "no-cache" }
     ]);
   })());
 });
 
 self.addEventListener('fetch', event => {
+    // 外部のリソースかどうかを判定する
+  if (event.request.url.startsWith('http')) {
+    // 外部のリソースの場合は、キャッシュに追加しない
+    return;
+  }
+
   event.respondWith((async () => {
     const cache = await caches.open(CACHE_NAME);
 
