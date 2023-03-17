@@ -10,7 +10,7 @@ function syncdata() {
         if (isNaN(data)) {
             switch (data) {
                 case 401:
-                    document.getElementById('timetable').innerText = '認証に失敗しました。ユーザー名またはパスワードが間違っています。';
+                    document.getElementById('timetable').innerText = '認証に失敗しました。ユーザー名またはパスワードが間違っている、または設定されていません。';
                     console.log('エラーが発生しました。エラーコード：' + data.status);
                     break;
             
