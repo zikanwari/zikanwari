@@ -4,6 +4,7 @@
     display: table;
     width: 100%;
     padding-top: 2vh;
+    color: #cdcdcd; /* グレー */
     }
     
     .table>div {
@@ -35,7 +36,6 @@
     
     span {
     line-height: 1em;
-    color: #cdcdcd; /* グレー */
     }
     
     @media (max-width: 767px) {
