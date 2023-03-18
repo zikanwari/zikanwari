@@ -1,3 +1,6 @@
 document.getElementById('setdata').addEventListener('click',() => {
-  console('Hello!');
+  showlog();
 });
+function showlog() {
+  console.log('Hello!');
+}
