@@ -1,6 +1,5 @@
-document.getElementById('setdata').addEventListener('click',() => {
-  showlog();
-});
-function showlog() {
-  console.log('Hello!');
+function startmoni() {
+  document.getElementById('setdata').addEventListener('click',() => {
+    console.log('Hello!');
+  });
 }

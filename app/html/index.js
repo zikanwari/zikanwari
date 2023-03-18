@@ -28,6 +28,8 @@ document.getElementById("other").onclick = function() {
         document.body.appendChild(script);
         scriptLoaded = true;
     }
+
+    startmoni();
 }
 
 document.getElementById("time").onclick = function() {
