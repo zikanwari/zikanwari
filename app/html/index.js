@@ -32,6 +32,5 @@ document.getElementById("other").onclick = function() {
 
 document.getElementById("time").onclick = function() {
     document.getElementById("other").classList.remove("select");
-    document.body.removeChild(script);
     changetime();
 }
