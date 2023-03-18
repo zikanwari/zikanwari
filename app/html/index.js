@@ -1,3 +1,5 @@
+var script = document.createElement('script');
+script.src = 'other/index.js';
 changetime();
 
 function changetime() {
@@ -18,17 +20,12 @@ document.getElementById("other").onclick = function() {
     .then(data => {
         document.getElementById('timetable').innerHTML = data;
     });    
-    
-    var script = document.createElement('script');
-    script.src = 'other/index.js';
-    document.body.appendChild(script);
 
-    window.addEventListener('unload', function() {
-        document.body.removeChild(script);
-      });
+    document.body.appendChild(script);
 }
 
 document.getElementById("time").onclick = function() {
     document.getElementById("other").classList.remove("select");
+    document.body.removeChild(script);
     changetime();
 }
