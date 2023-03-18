@@ -1,3 +1,3 @@
-setdata.addEventListener('click',() => {
-  console.log('Hello!');
+document.getElementById('setdata').addEventListener('click',() => {
+  console('Hello!');
 });
