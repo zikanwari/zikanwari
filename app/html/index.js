@@ -1,5 +1,5 @@
-var script = document.createElement('script');
-script.src = 'other/index.js';
+let scriptLoaded = false;
+
 changetime();
 
 function changetime() {
@@ -21,7 +21,13 @@ document.getElementById("other").onclick = function() {
         document.getElementById('timetable').innerHTML = data;
     });    
 
-    document.body.appendChild(script);
+    if (!scriptLoaded) {
+        // load script and set flag to true
+        script = document.createElement('script');
+        script.src = 'other/index.js';
+        document.body.appendChild(script);
+        scriptLoaded = true;
+    }
 }
 
 document.getElementById("time").onclick = function() {
