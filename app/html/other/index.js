@@ -1,3 +1,5 @@
-document.getElementById('setdata').addEventListener('click',() => {
+script.onload = function () {
+  document.getElementById('setdata').addEventListener('click',() => {
     alert('Hello!');
   });
+}
