@@ -23,9 +23,9 @@ document.getElementById("other").onclick = function() {
     script.src = 'other/index.js';
     document.body.appendChild(script);
 
-    /*window.addEventListener('unload', function() {
+    window.addEventListener('unload', function() {
         document.body.removeChild(script);
-      });*/
+      });
 }
 
 document.getElementById("time").onclick = function() {
