@@ -1,5 +1,8 @@
 script.onload = function () {
-  document.getElementById('setdata').addEventListener('click',() => {
-    alert('Hello!');
-  });
-}
+  const setdata = document.getElementById('setdata');
+  if (setdata) {
+    setdata.addEventListener('click',() => {
+      alert('Hello!');
+    });
+  }
+};
