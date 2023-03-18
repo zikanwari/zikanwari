@@ -1,5 +1,3 @@
-let scriptLoaded = false;
-
 changetime();
 
 function changetime() {
@@ -19,17 +17,8 @@ document.getElementById("other").onclick = function() {
     .then(response => response.text())
     .then(data => {
         document.getElementById('timetable').innerHTML = data;
-    });    
-
-    if (!scriptLoaded) {
-        // load script and set flag to true
-        script = document.createElement('script');
-        script.src = 'other/index.js';
-        document.body.appendChild(script);
-        scriptLoaded = true;
-    }
-
-    startmoni();
+        startmoni();
+    });
 }
 
 document.getElementById("time").onclick = function() {
