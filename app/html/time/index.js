@@ -1,5 +1,8 @@
 function syncdata() {
-    fetch(`https://api.launchpencil.f5.si/zikanwari/?user=2-5&pass=tokoroten`)
+    const username = localStorage.getItem('user');
+    const password = localStorage.getItem('pass');
+
+    fetch(`https://api.launchpencil.f5.si/zikanwari/?user=` + username + `&pass=` + password)
     .then(response => response.text())
     .then(data => {
             a = data.split(',');
