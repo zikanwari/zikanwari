@@ -6,11 +6,4 @@ function startmoni() {
     alert("保存しました。「時間割」から確認できます。")
   });
 
-  const setauth = document.querySelector('#setauth');
-  const setdata = document.querySelector('#form');
-
-  setauth.addEventListener('click', () => {
-    setdata.style.display = 'block';
-  });
-
 }

@@ -81,17 +81,3 @@ input[type="password"]:focus {
     border-color: #4CAF50;
     box-shadow: 0 0 5px #4CAF50;
 }
-
-#form {
-  display: none;
-  animation-duration: 0.5s;
-  animation-name: slideInDown;
-}
-@keyframes slideInDown {
-  from {
-    transform: translateY(-100%);
-  }
-  to {
-    transform: translateY(0%);
-  }
-}
