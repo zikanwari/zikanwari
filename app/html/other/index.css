@@ -79,3 +79,7 @@ input[type="password"]:focus {
   height: 1em;
   overflow: hidden;
 }
+
+#setauth > div {
+  height: 100%;
+}
