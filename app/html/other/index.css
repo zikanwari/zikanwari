@@ -82,7 +82,7 @@ input[type="password"]:focus {
     box-shadow: 0 0 5px #4CAF50;
 }
 
-#setauth {
+#form {
   display: none;
   animation-duration: 0.5s;
   animation-name: slideInDown;
