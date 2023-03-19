@@ -17,19 +17,10 @@
 .table > div > div {
   display: table-cell;
   padding: 20px;
-  text-align: left; /* 文字を左側に移動 */
   vertical-align: middle;
   font-weight: bold;
   border: 1px solid #ddd;
   border-radius: 10px;
-}
-  
-
-#credential {
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
 }
 
 /* ラベルのスタイル */
@@ -75,12 +66,6 @@ input[type="password"]:focus {
 }
 
 
-#setauth {
-  height: 1em;
-  overflow: hidden;
-}
-
-#setauth > div,
-#setauth > div > div {
-  height: 100%;
+#form {
+  display: none;
 }
