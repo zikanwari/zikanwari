@@ -1,36 +1,35 @@
 /* table要素のスタイル */
 .table {
-    display: table;
-    width: 100%;
-    background-color: #2c3e50;
-    border-collapse: separate;
-    border-spacing: 20px;
-    border-radius: 10px;
-  }
-  
-  /* テーブルの各行のスタイル */
-  .table > div {
-    display: table-row;
-  }
-  
-  /* テーブルの各セルのスタイル */
-  .table > div > div {
-    display: table-cell;
-    padding: 20px;
-    text-align: left; /* 文字を左側に移動 */
-    vertical-align: middle;
-    font-weight: bold;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-  }
+  display: table;
+  width: 100%;
+  background-color: #2c3e50;
+  border-collapse: separate;
+  border-spacing: 20px;
+  border-radius: 10px;
+}
+
+/* テーブルの各行のスタイル */
+.table > div {
+  display: table-row;
+}
+
+/* テーブルの各セルのスタイル */
+.table > div > div {
+  display: table-cell;
+  padding: 20px;
+  text-align: left; /* 文字を左側に移動 */
+  vertical-align: middle;
+  font-weight: bold;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
   
 
-  #credential {
-
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+#credential {
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 /* ラベルのスタイル */
@@ -38,6 +37,26 @@ label {
     display: inline-block;
     margin-bottom: 5px;
 }
+
+/* ボタンのスタイル */
+#setdata {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* ボタンにマウスが乗ったときのスタイル */
+#setdata:hover {
+    background-color: #3e8e41;
+}
+
 
 /* 入力フィールドのスタイル */
 input[type="text"],
@@ -48,33 +67,6 @@ input[type="password"] {
     border-radius: 5px;
     box-sizing: border-box;
 }
-
-/* ボタンのスタイル */
-#setdata {
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-/* ボタンにマウスが乗ったときのスタイル */
-#setdata:hover {
-    background-color: #3e8e41;
-}
-
-/* ボタンをdivに変更 */
-#setdata {
-    display: block;
-    width: 100%;
-    margin-top: 10px;
-    text-align: center;
-}
-
-/* フォーカスされた入力フィールドのスタイル */
 input[type="text"]:focus,
 input[type="password"]:focus {
     outline: none;
