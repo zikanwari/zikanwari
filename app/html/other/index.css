@@ -24,3 +24,60 @@
     border-radius: 10px;
   }
   
+
+  #credential {
+
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* ラベルのスタイル */
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+/* 入力フィールドのスタイル */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* ボタンのスタイル */
+#setdata {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* ボタンにマウスが乗ったときのスタイル */
+#setdata:hover {
+    background-color: #3e8e41;
+}
+
+/* ボタンをdivに変更 */
+#setdata {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* フォーカスされた入力フィールドのスタイル */
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px #4CAF50;
+}
