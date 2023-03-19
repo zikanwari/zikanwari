@@ -8,8 +8,8 @@ function startmoni() {
 }
 
 const setauth = document.querySelector('#setauth');
-const setdata = document.querySelector('#setdata');
+const setdata = document.querySelector('#setform');
 
-setdata.addEventListener('click', () => {
-  setauth.style.display = 'block';
+setauth.addEventListener('click', () => {
+  setdata.style.display = 'block';
 });
