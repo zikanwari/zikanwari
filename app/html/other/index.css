@@ -73,3 +73,9 @@ input[type="password"]:focus {
     border-color: #4CAF50;
     box-shadow: 0 0 5px #4CAF50;
 }
+
+
+#setauth {
+  height: 1em;
+  overflow: hidden;
+}
