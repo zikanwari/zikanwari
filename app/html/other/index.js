@@ -5,11 +5,12 @@ function startmoni() {
     localStorage.setItem('pass', document.getElementById("password").value);
     alert("保存しました。「時間割」から確認できます。")
   });
+
+  const setauth = document.querySelector('#setauth');
+  const setdata = document.querySelector('#setform');
+
+  setauth.addEventListener('click', () => {
+    setdata.style.display = 'block';
+  });
+
 }
-
-const setauth = document.querySelector('#setauth');
-const setdata = document.querySelector('#setform');
-
-setauth.addEventListener('click', () => {
-  setdata.style.display = 'block';
-});
