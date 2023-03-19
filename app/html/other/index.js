@@ -7,7 +7,7 @@ function startmoni() {
   });
 
   const setauth = document.querySelector('#setauth');
-  const setdata = document.querySelector('#setform');
+  const setdata = document.querySelector('#form');
 
   setauth.addEventListener('click', () => {
     setdata.style.display = 'block';
