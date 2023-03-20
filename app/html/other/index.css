@@ -69,5 +69,5 @@ input[type="password"]:focus {
 #form {
   max-height: 0;
   overflow: hidden;
-  transition: height 0.5s ease-out;
+  transition: height 1s ease-out;
 }
