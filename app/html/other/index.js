@@ -6,4 +6,7 @@ function startmoni() {
     alert("保存しました。「時間割」から確認できます。")
   });
 
+  document.getElementById('setauth').addEventListener('click',() => {
+    document.getElementById('form').style.display = "blovk";
+  });
 }
