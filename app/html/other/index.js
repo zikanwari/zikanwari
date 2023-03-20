@@ -7,6 +7,6 @@ function startmoni() {
   });
 
   document.getElementById('setauth').addEventListener('click',() => {
-    document.getElementById('form').style.height = "auto";
+    $('#form').animate({ height: 'auto' }, 500);
   });
 }
