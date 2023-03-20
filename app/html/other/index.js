@@ -7,6 +7,6 @@ function startmoni() {
   });
 
   document.getElementById('setauth').addEventListener('click',() => {
-    document.getElementById('form').style.display = "block";
+    document.getElementById('form').style.height = "auto";
   });
 }

@@ -67,5 +67,6 @@ input[type="password"]:focus {
 
 
 #form {
-  display: none;
+  height: 0;
+  overflow: hidden;
 }
