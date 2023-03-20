@@ -75,3 +75,8 @@ input[type="password"]:focus {
 #form.show {
   max-height: 300px;
 }
+
+#togle {
+  width: 100%;
+  display: block;
+}
