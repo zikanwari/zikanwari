@@ -6,7 +6,9 @@ function startmoni() {
     alert("保存しました。「時間割」から確認できます。")
   });
 
-  document.getElementById('togle').addEventListener('click',() => {
-    document.getElementById('form').classList.toggle("show");
+  document.querySelectorAll('#togle, #setdata').forEach(function(element) {
+    element.addEventListener('click', function() {
+      document.getElementById('form').classList.toggle("show");
+    });
   });
 }
