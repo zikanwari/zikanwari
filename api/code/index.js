@@ -15,7 +15,7 @@ const server = http.createServer((req, res) => {
     database: 'zikan'
   });
 
-  if (req.url === '/change') {
+  if (req.url === '/zikanwari/change') {
     const day = queryObject.day;
     const time = queryObject.time;
     const subject = queryObject.subject;
