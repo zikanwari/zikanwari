@@ -32,9 +32,16 @@ function syncdata() {
 
       select.addEventListener("change", function() {
         customSelect.classList.add("selected");
-        customSelect.querySelector("span").textContent = this.options[this.selectedIndex].textContent;
-
-        alert(`Custom select box ${index + 1} was changed to ` + this.value);
+        
+        
+        fetch(`https://api.launchpencil.f5.si/zikanwari/change/?user=${username}&pass=${password}&id=${index}&subject=${this.value}`)
+        .then(response => response.text())
+        .then(data => {
+                alert(data)
+        })
+        .catch(error => {
+            alert('時間割のデータ取得に失敗しました。');
+        });
       });
 
       customSelect.addEventListener("click", function() {
