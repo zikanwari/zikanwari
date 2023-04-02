@@ -25,15 +25,18 @@ function syncdata() {
     });
 
 
-    const customSelect = document.querySelector(".custom-select");
-    const select = customSelect.querySelector("select");
+    const customSelects = document.querySelectorAll(".custom-select");
 
-    select.addEventListener("change", function() {
-      customSelect.classList.add("selected");
-      customSelect.querySelector("span").textContent = this.options[this.selectedIndex].textContent;
-    });
+    customSelects.forEach(customSelect => {
+      const select = customSelect.querySelector("select");
 
-    customSelect.addEventListener("click", function() {
-      this.classList.toggle("open");
+      select.addEventListener("change", function() {
+        customSelect.classList.add("selected");
+        customSelect.querySelector("span").textContent = this.options[this.selectedIndex].textContent;
+      });
+
+      customSelect.addEventListener("click", function() {
+        this.classList.toggle("open");
+      });
     });
 }
