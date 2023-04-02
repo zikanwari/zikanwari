@@ -36,11 +36,4 @@ function syncdata() {
     customSelect.addEventListener("click", function() {
       this.classList.toggle("open");
     });
-
-    options.forEach(option => {
-      option.addEventListener("click", function() {
-        select.value = this.textContent;
-        select.dispatchEvent(new Event("change"));
-      });
-    });
 }
