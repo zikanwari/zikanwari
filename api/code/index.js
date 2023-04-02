@@ -38,7 +38,7 @@ const server = http.createServer((req, res) => {
               return;
           }
   
-          res.write(day + '曜日の' + time + '時間目の教科を' + subject + 'に変更しました。');
+          res.write(day + 'の' + time + '時間目の教科を' + subject + 'に変更しました。');
   
           connection.end();
           res.end();
