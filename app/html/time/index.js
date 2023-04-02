@@ -25,7 +25,7 @@ function syncdata() {
     });
 
 
-    const customSelect = document.querySelectorAll('.table > div > div');
+    const customSelects = document.querySelectorAll('.table > div > div');
 
     customSelects.forEach(customSelect => {
         const select = customSelect.querySelector("select");
