@@ -25,25 +25,22 @@ function syncdata() {
     });
 
 
-    const customSelects = document.querySelectorAll('.table > div > div')[
-        7, 8, 9, 10, 11,
-        13, 14, 15, 16, 17,
-        19, 20, 21, 22, 23,
-        25, 26, 27, 28, 29,
-        31, 32, 33, 34, 35,
-        37, 38, 39, 40, 41
-      ];
+    const customSelect = document.querySelector(".custom-select");
+    const select = customSelect.querySelector("select");
 
-    customSelects.forEach(customSelect => {
-        const select = customSelect.querySelector("select");
-  
-        select.addEventListener("change", function() {
-          customSelect.classList.add("selected");
-          customSelect.querySelector("span").textContent = this.options[this.selectedIndex].textContent;
-        });
-  
-        customSelect.addEventListener("click", function() {
-          this.classList.toggle("open");
-        });
+    select.addEventListener("change", function() {
+      customSelect.classList.add("selected");
+      customSelect.querySelector("span").textContent = this.options[this.selectedIndex].textContent;
+    });
+
+    customSelect.addEventListener("click", function() {
+      this.classList.toggle("open");
+    });
+
+    options.forEach(option => {
+      option.addEventListener("click", function() {
+        select.value = this.textContent;
+        select.dispatchEvent(new Event("change"));
       });
+    });
 }
