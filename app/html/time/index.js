@@ -11,7 +11,7 @@ function syncdata() {
       select.addEventListener("change", function() {
         customSelect.classList.add("selected");
         
-        fetch(`https://api.launchpencil.f5.si/zikanwari/change/?user=${username}&pass=${password}&id=${index}&subject=${this.value}`)
+        fetch('https://api.launchpencil.f5.si/zikanwari/change/?user=' + username + '&pass=' + password + '&id=' + index + '&subject=' + this.value)
         .then(response => response.text())
         .then(data => {
                 alert(data)
