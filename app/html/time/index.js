@@ -1,6 +1,7 @@
+const username = localStorage.getItem('user');
+const password = localStorage.getItem('pass');
+
 function syncdata() {
-  const username = localStorage.getItem('user');
-  const password = localStorage.getItem('pass');
   update();
 
     const customSelects = document.querySelectorAll(".custom-select");
