@@ -10,6 +10,8 @@ function syncdata() {
       const select = customSelect.querySelector("select");
 
       select.addEventListener("change", function() {
+        var username = localStorage.getItem('user');
+        var password = localStorage.getItem('pass');
         customSelect.classList.add("selected");
         
         fetch('https://api.launchpencil.f5.si/zikanwari/change/?user=' + username + '&pass=' + password + '&id=' + index + '&subject=' + this.value)
