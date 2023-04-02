@@ -1,5 +1,5 @@
-const username = localStorage.getItem('user');
-const password = localStorage.getItem('pass');
+var username = localStorage.getItem('user');
+var password = localStorage.getItem('pass');
 
 function syncdata() {
   update();
@@ -31,6 +31,9 @@ function syncdata() {
 }
 
 function update() {
+  var username = localStorage.getItem('user');
+  var password = localStorage.getItem('pass');
+
   fetch(`https://api.launchpencil.f5.si/zikanwari/?user=` + username + `&pass=` + password)
   .then(response => response.text())
   .then(data => {
