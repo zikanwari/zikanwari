@@ -90,5 +90,5 @@ function idtodata(id) {
 
   var dayid = ['月','火','水','木','金']
   // 結果を返す
-  return [row, daytime[col] + '曜日'];
+  return [row, dayid[col] + '曜日'];
 }
