@@ -81,14 +81,14 @@ server.listen(3000, () => {
 
 
 function idtodata(id) {
-  var time = Math.floor(num / 5) + 1;
-  var day = num % 5;
+  var time = Math.floor(id / 5) + 1;
+  var day = id % 5;
 
   // 曜日と時間からセルの位置を生成する
   var row = time;
   var col = day;
 
-  var daynum = ['月','火','水','木','金']
+  var dayid = ['月','火','水','木','金']
   // 結果を返す
   return [row, daytime[col] + '曜日'];
 }
