@@ -23,15 +23,17 @@ function syncdata() {
     .catch(error => {
         document.getElementById('timetable').innerText = '時間割のデータ取得に失敗しました。';
     });
+
+
+    const customSelect = document.querySelector(".custom-select");
+    const select = customSelect.querySelector("select");
+
+    select.addEventListener("change", function() {
+      customSelect.classList.add("selected");
+      customSelect.querySelector("span").textContent = this.options[this.selectedIndex].textContent;
+    });
+
+    customSelect.addEventListener("click", function() {
+      this.classList.toggle("open");
+    });
 }
-const customSelect = document.querySelector(".custom-select");
-const select = customSelect.querySelector("select");
-
-select.addEventListener("change", function() {
-  customSelect.classList.add("selected");
-  customSelect.querySelector("span").textContent = this.options[this.selectedIndex].textContent;
-});
-
-customSelect.addEventListener("click", function() {
-  this.classList.toggle("open");
-});
