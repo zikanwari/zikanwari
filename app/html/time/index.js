@@ -27,12 +27,14 @@ function syncdata() {
 
     const customSelects = document.querySelectorAll(".custom-select");
 
-    customSelects.forEach(customSelect => {
+    customSelects.forEach((customSelect, index) => {
       const select = customSelect.querySelector("select");
 
       select.addEventListener("change", function() {
         customSelect.classList.add("selected");
         customSelect.querySelector("span").textContent = this.options[this.selectedIndex].textContent;
+
+        alert(`Custom select box ${index + 1} was changed to ` + this.value);
       });
 
       customSelect.addEventListener("click", function() {

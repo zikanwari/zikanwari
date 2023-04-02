@@ -17,9 +17,9 @@ const server = http.createServer((req, res) => {
   });
 
   if (req.url.startsWith('/zikanwari/change')) {
-    const day = queryObject.day;
-    const time = queryObject.time;
     const subject = queryObject.subject;
+    data = idtodata(queryObject.id);
+
     
     connection.connect((err) => {
       if (err) {
@@ -29,7 +29,7 @@ const server = http.createServer((req, res) => {
       }
   
       const sql = "UPDATE ?? SET ?? = ? WHERE `time` = ?";
-      const params = [username, day, subject, time];
+      const params = [username, data[1], subject, data[0]];
   
       connection.query(sql, params, (err, results, fields) => {
           if (err) {
@@ -38,7 +38,7 @@ const server = http.createServer((req, res) => {
               return;
           }
   
-          res.write(day + 'の' + time + '時間目の教科を' + subject + 'に変更しました。');
+          res.write(data[1] + 'の' + data[0] + '時間目の教科を' + subject + 'に変更しました。');
   
           connection.end();
           res.end();
@@ -78,3 +78,17 @@ const server = http.createServer((req, res) => {
 server.listen(3000, () => {
   console.log('Server running on port 3000');
 });
+
+
+function idtodata(id) {
+  var time = Math.floor(num / 5) + 1;
+  var day = num % 5;
+
+  // 曜日と時間からセルの位置を生成する
+  var row = time;
+  var col = day;
+
+  var daynum = ['月','火','水','木','金']
+  // 結果を返す
+  return [row, daytime[col] + '曜日'];
+}
