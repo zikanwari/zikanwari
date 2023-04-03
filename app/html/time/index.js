@@ -51,7 +51,7 @@ function update() {
           }
           a.pop();
           for (let index = 0; index < a.length; index++) {
-              document.getElementById(index).innerText = a[index];
+              document.querySelector('#' + index + " > span").innerText = a[index];
           }
   })
   .catch(error => {
