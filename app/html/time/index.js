@@ -53,8 +53,7 @@ function update() {
           a.pop();
           for (let index = 0; index < a.length; index++) {
               document.getElementById(index).innerText = a[index];
-              let s_index =' s_' + index;
-              s_index.value = a[index];
+              document.getElementById('s_' + index).value = a[index];
           }
   })
   .catch(error => {
