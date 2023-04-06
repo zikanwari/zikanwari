@@ -13,5 +13,21 @@
             "src": "/favicon.png",
             "sizes": "240x240"
         }
-    ]
+    ],
+    "widgets": {
+        "widget-1": {
+          "name": "Widget Name",
+          "description": "Description of your widget",
+          "icon": "faicon.png",
+          "path": "/index.html",
+          "sizes": [
+            [2,2],
+            [4,4]
+          ],
+          "position": {
+            "x": 0,
+            "y": 0
+          }
+        }
+      }
 }
