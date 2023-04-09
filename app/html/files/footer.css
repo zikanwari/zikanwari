@@ -3,6 +3,11 @@ body {
     height: 100vh;
     overflow: hidden;
     }
+
+a {
+    text-decoration: none; /* 下線を消す */
+    color: inherit; 
+}
     
 main {
     background-color: #2c3e50;
