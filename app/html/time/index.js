@@ -1,24 +1,6 @@
 var username = localStorage.getItem('user');
 var password = localStorage.getItem('pass');
 
-const subjects = {
-  '国語': 0,
-  '社会': 1,
-  '数学': 2,
-  '理科': 3,
-  '英語': 4,
-  '体育': 5,
-  '技術': 6,
-  '家庭科': 7,
-  '音楽': 8,
-  '美術': 9,
-  '道徳': 10,
-  '総合': 11,
-  '学活': 12,
-  'なし': 13,
-  'その他': 14,
-};
-
 function syncdata() {
   update();
 
@@ -71,8 +53,7 @@ function update() {
           a.pop();
           for (let index = 0; index < a.length; index++) {
               document.getElementById(index).innerText = a[index];
-              let s_index =' s_' + index;
-              s_index.value = a[index];
+              document.getElementById('s_' + index).value = a[index];
           }
   })
   .catch(error => {
