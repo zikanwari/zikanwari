@@ -23,7 +23,7 @@ client.on("messageCreate", async (message) => {
   }, function(err, req, data){
     a = data.split(',');
     a.pop();
-    message.reply('明日(' + a[6] + ')の時間割は、');
+    message.reply('明日(' + a[7] + ')の時間割は、');
     var msg = '';
     for(x in a){
 
@@ -31,7 +31,7 @@ client.on("messageCreate", async (message) => {
 
         time++;
 
-        if (time > 6) {
+        if (time > 7) {
           break;
         }
 

@@ -79,6 +79,7 @@ foreach ( $result_rows as $row ) {
             <option>4</option>
             <option>5</option>
             <option>6</option>
+            <option>7</option>
         </select>
         <span>時間目を</span>
         <select name="subject">

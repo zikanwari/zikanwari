@@ -84,14 +84,14 @@ function getdata(msg1, msg2, replyToken, url) {
   }, function(err, req, data){
     a = data.split(',');
     a.pop();
-    msg1 = a[6] + '曜日の時間割は、';
+    msg1 = a[7] + '曜日の時間割は、';
     for(x in a){
 
         sub = a[x];
 
         time++;
 
-        if (time > 6) {
+        if (time > 7) {
           break;
         }
 
