@@ -3,7 +3,6 @@
     border-spacing: 10px;
     display: table;
     width: 100%;
-    padding-top: 2vh;
     }
     
     .table>div {
@@ -14,7 +13,7 @@
     .table>div>div {
         display: table-cell;
         width: 20vw;
-        height: 9vh;
+        height: 8vh;
         text-align: center;
         vertical-align: middle;
         border-radius: 10px;
