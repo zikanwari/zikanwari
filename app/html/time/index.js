@@ -45,6 +45,9 @@ function update() {
               if (a[1].startsWith("Access denied for user")) {
                   document.getElementById('timetable').innerText = 
                       '認証に失敗しました。ユーザー名またはパスワードが間違っているか設定されていません。';
+                      if (confirm('ユーザー名またはパスワードが間違っているか設定されていません。\nOKを押すと設定画面へ移動します。')) {
+                        changeother();
+                      }
                       return;
               }
               document.getElementById('timetable').innerText = '時間割のデータ取得に失敗しました。\n エラーメッセージ：' + a[1];
@@ -52,8 +55,16 @@ function update() {
           }
           a.pop();
           for (let index = 0; index < a.length; index++) {
-              document.getElementById(index).innerText = a[index];
-              document.getElementById('s_' + index).value = a[index];
+            switch (a[index]) {
+              case '数学Ⅰ・Ⅱ':
+                document.getElementById(index).innerText = '数学\nⅠ・Ⅱ'
+                break;
+            
+              default:
+                document.getElementById(index).innerText = a[index];
+                break;
+            }
+            document.getElementById('s_' + index).value = a[index];
           }
   })
   .catch(error => {

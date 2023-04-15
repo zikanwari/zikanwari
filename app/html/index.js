@@ -10,7 +10,7 @@ function changetime() {
     });
 }
 
-document.getElementById("other").onclick = function() {
+function changeother() {
     document.getElementById("time").classList.remove("select");
     document.getElementById("other").classList.add("select");
     fetch(`other/index.html`)
@@ -19,6 +19,10 @@ document.getElementById("other").onclick = function() {
         document.getElementById('timetable').innerHTML = data;
         startmoni();
     });
+}
+
+document.getElementById("other").onclick = function() {
+    changeother();
 }
 
 document.getElementById("time").onclick = function() {
