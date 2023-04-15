@@ -14,7 +14,7 @@ function syncdata() {
         var password = localStorage.getItem('pass');
         customSelect.classList.add("selected");
         
-        fetch('https://api.launchpencil.f5.si/zikanwari/change/?user=' + username + '&pass=' + password + '&id=' + index + '&subject=' + escape(this.value))
+        fetch('https://api.launchpencil.f5.si/zikanwari/change/?user=' + username + '&pass=' + password + '&id=' + index + '&subject=' + this.value)
         .then(response => response.text())
         .then(data => {
                 alert(data);
