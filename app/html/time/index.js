@@ -45,9 +45,11 @@ function update() {
               if (a[1].startsWith("Access denied for user")) {
                   document.getElementById('timetable').innerText = 
                       '認証に失敗しました。ユーザー名またはパスワードが間違っているか設定されていません。';
-                      if (confirm('ユーザー名またはパスワードが間違っているか設定されていません。\nOKを押すと設定画面へ移動します。')) {
-                        changeother();
-                      }
+                      setTimeout(function() {
+                        if (confirm('ユーザー名またはパスワードが間違っているか設定されていません。\nOKを押すと設定画面へ移動します。')) {
+                          changeother();
+                        }
+                      }, 100);
                       return;
               }
               document.getElementById('timetable').innerText = '時間割のデータ取得に失敗しました。\n エラーメッセージ：' + a[1];
