@@ -5,19 +5,19 @@
 ---
 zikanwari
 
-[![Web site CI](https://github.com/launchpencil/zikanwari/actions/workflows/web-build.yml/badge.svg)](https://github.com/launchpencil/zikanwari/actions/workflows/web-build.yml)
-[![Bot CI](https://github.com/launchpencil/zikanwari/actions/workflows/bot-build.yml/badge.svg)](https://github.com/launchpencil/zikanwari/actions/workflows/bot-build.yml)
-[![LINE CI](https://github.com/launchpencil/zikanwari/actions/workflows/line-build.yml/badge.svg)](https://github.com/launchpencil/zikanwari/actions/workflows/line-build.yml)
-[![App CI](https://github.com/launchpencil/zikanwari/actions/workflows/app-build.yml/badge.svg)](https://github.com/launchpencil/zikanwari/actions/workflows/app-build.yml)
+[![Web site CI](https://github.com/zikanwari/zikanwari/actions/workflows/web-build.yml/badge.svg)](https://github.com/zikanwari/zikanwari/actions/workflows/web-build.yml)
+[![Bot CI](https://github.com/zikanwari/zikanwari/actions/workflows/bot-build.yml/badge.svg)](https://github.com/zikanwari/zikanwari/actions/workflows/bot-build.yml)
+[![LINE CI](https://github.com/zikanwari/zikanwari/actions/workflows/line-build.yml/badge.svg)](https://github.com/zikanwari/zikanwari/actions/workflows/line-build.yml)
+[![App CI](https://github.com/zikanwari/zikanwari/actions/workflows/app-build.yml/badge.svg)](https://github.com/zikanwari/zikanwari/actions/workflows/app-build.yml)
 
 pon
 
-[![pon-web CI](https://github.com/launchpencil/zikanwari/actions/workflows/web-pon.yml/badge.svg)](https://github.com/launchpencil/zikanwari/actions/workflows/web-pon.yml)
-[![pon-convert CI](https://github.com/launchpencil/zikanwari/actions/workflows/convert-pon.yml/badge.svg)](https://github.com/launchpencil/zikanwari/actions/workflows/convert-pon.yml)
+[![pon-web CI](https://github.com/zikanwari/zikanwari/actions/workflows/web-pon.yml/badge.svg)](https://github.com/zikanwari/zikanwari/actions/workflows/web-pon.yml)
+[![pon-convert CI](https://github.com/zikanwari/zikanwari/actions/workflows/convert-pon.yml/badge.svg)](https://github.com/zikanwari/zikanwari/actions/workflows/convert-pon.yml)
 
 multisong
 
-[![multisong CI](https://github.com/launchpencil/zikanwari/actions/workflows/multisong.yml/badge.svg)](https://github.com/launchpencil/zikanwari/actions/workflows/multisong.yml)
+[![multisong CI](https://github.com/zikanwari/zikanwari/actions/workflows/multisong.yml/badge.svg)](https://github.com/zikanwari/zikanwari/actions/workflows/multisong.yml)
 
 ---
 
@@ -27,4 +27,4 @@ multisong
 - 環境変数に `DB` , `USER` , `PASSWORD` がそれぞれ指定されていること
 
 ## 導入にあたって（ポン出し内）
-- Web部分の[upload](https://github.com/launchpencil/zikanwari/tree/main/pon/web/html/upload)フォルダ及びconvert部分の/upload部分を共通のディレクトリとしてマウントする
+- Web部分の[upload](https://github.com/zikanwari/zikanwari/tree/main/pon/web/html/upload)フォルダ及びconvert部分の/upload部分を共通のディレクトリとしてマウントする
