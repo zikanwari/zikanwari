@@ -10,21 +10,13 @@ zikanwari
 [![LINE CI](https://github.com/zikanwari/zikanwari/actions/workflows/line-build.yml/badge.svg)](https://github.com/zikanwari/zikanwari/actions/workflows/line-build.yml)
 [![App CI](https://github.com/zikanwari/zikanwari/actions/workflows/app-build.yml/badge.svg)](https://github.com/zikanwari/zikanwari/actions/workflows/app-build.yml)
 
-pon
-
-[![pon-web CI](https://github.com/zikanwari/zikanwari/actions/workflows/web-pon.yml/badge.svg)](https://github.com/zikanwari/zikanwari/actions/workflows/web-pon.yml)
-[![pon-convert CI](https://github.com/zikanwari/zikanwari/actions/workflows/convert-pon.yml/badge.svg)](https://github.com/zikanwari/zikanwari/actions/workflows/convert-pon.yml)
-
 multisong
 
 [![multisong CI](https://github.com/zikanwari/zikanwari/actions/workflows/multisong.yml/badge.svg)](https://github.com/zikanwari/zikanwari/actions/workflows/multisong.yml)
 
 ---
 
-## 導入にあたって（時間割内）
+## 導入にあたって
 - mysql(MariaDB)があること
 - データベース ` zikan` があり、読み書きの権限があること
 - 環境変数に `DB` , `USER` , `PASSWORD` がそれぞれ指定されていること
-
-## 導入にあたって（ポン出し内）
-- Web部分の[upload](https://github.com/zikanwari/zikanwari/tree/main/pon/web/html/upload)フォルダ及びconvert部分の/upload部分を共通のディレクトリとしてマウントする
