@@ -20,9 +20,9 @@ jobs:
       - uses: docker/metadata-action@v3
         id: meta
         with:
-          images: ghcr.io/launchpencil/zikanwari
+          images: ghcr.io/zikanwari/zikanwari
       - uses: docker/build-push-action@v2
         with:
           context: bot/line
           push: true
-          tags: ghcr.io/launchpencil/zikanwari:line
+          tags: ghcr.io/zikanwari/zikanwari:line

@@ -20,9 +20,9 @@ jobs:
       - uses: docker/metadata-action@v3
         id: meta
         with:
-          images: ghcr.io/launchpencil/multisong
+          images: ghcr.io/zikanwari/multisong
       - uses: docker/build-push-action@v2
         with:
           context: multisong
           push: true
-          tags: ghcr.io/launchpencil/multisong:latest
+          tags: ghcr.io/zikanwari/multisong:latest

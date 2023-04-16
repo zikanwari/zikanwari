@@ -20,9 +20,9 @@ jobs:
       - uses: docker/metadata-action@v3
         id: meta
         with:
-          images: ghcr.io/launchpencil/pon
+          images: ghcr.io/zikanwari/pon
       - uses: docker/build-push-action@v2
         with:
           context: pon/web
           push: true
-          tags: ghcr.io/launchpencil/pon:latest
+          tags: ghcr.io/zikanwari/pon:latest
