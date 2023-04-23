@@ -42,7 +42,7 @@ function update() {
   .then(data => {
           a = data.split(',');
           if (a[0] == "エラー") {
-              if (a[1].startsWith("Access denied for user") || a[1].endsWith("doesn't exist")) {
+              if (a[1].startsWith("Access denied for user")) {
                   document.getElementById('timetable').innerText = 
                       '認証に失敗しました。ユーザー名またはパスワードが間違っているか設定されていません。';
                       setTimeout(function() {
