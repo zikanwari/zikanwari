@@ -11,7 +11,7 @@
     $day = ($_POST['day']);
     $time = ($_POST['time']);
     $subject = ($_POST['subject']);
-    $coma = 'UPDATE `2-5` SET `' . $day . '曜日` = \'' . $subject . '\' WHERE `2-5`.`time` = ' . $time;
+    $coma = 'UPDATE `' . getenv('USER') . '` SET `' . $day . '曜日` = \'' . $subject . '\' WHERE `' . getenv('USER') . '`.`time` = ' . $time;
     echo 'コマンド：' . $coma . 'を実行しています…';
     $pdo->query($coma);
     echo '成功しました。\n';

@@ -18,7 +18,7 @@ try{
     die('接続エラー：' .$Exception->getMessage());
 }
 try{
-    $sql = "SELECT * FROM zikan.`2-5`";
+    $sql = "SELECT * FROM zikan.`". getenv('USER') . "`";
     $stmh = $pdo->prepare($sql);
     $stmh->execute();
 }catch(PDOException $Exception){
@@ -83,21 +83,25 @@ foreach ( $result_rows as $row ) {
         </select>
         <span>時間目を</span>
         <select name="subject">
-            <option>国語</option>
-            <option>社会</option>
-            <option>数学</option>
-            <option>理科</option>
-            <option>英語</option>
-            <option>体育</option>
-            <option>技術</option>
-            <option>家庭科</option>
-            <option>音楽</option>
-            <option>美術</option>
-            <option>道徳</option>
-            <option>総合</option>
-            <option>学活</option>
-            <option>なし</option>
-            <option>その他</option>
+            <option value="英語E">英語E</option>
+            <option value="体育">体育</option>
+            <option value="数学Ⅰ・Ⅱ">数学Ⅰ・Ⅱ</option>
+            <option value="数学A">数学A</option>
+            <option value="家庭">家庭</option>
+            <option value="言文">言文</option>
+            <option value="英語C">英語C</option>
+            <option value="生物">生物</option>
+            <option value="芸術">芸術</option>
+            <option value="物理">物理</option>
+            <option value="現代文">現代文</option>
+            <option value="保健">保健</option>
+            <option value="DS">DS</option>
+            <option value="生物">生物</option>
+            <option value="歴史">歴史</option>
+            <option value="HRA">HRA</option>
+            <option value="SSH">SSH</option>
+            <option value="その他">その他</option>
+            <option value="なし">なし</option>
         </select>
         <span>にする</span>
     </p>
