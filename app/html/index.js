@@ -38,6 +38,10 @@ document.getElementById("other").onclick = function() {
     changeother();
 }
 
+document.getElementById("todo").onclick = function() {
+    changetodo();
+}
+
 document.getElementById("time").onclick = function() {
     document.getElementById("other").classList.remove("select");
     document.getElementById("todo").classList.remove("select");
