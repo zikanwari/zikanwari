@@ -30,7 +30,7 @@ function changetodo() {
     .then(response => response.text())
     .then(data => {
         document.getElementById('timetable').innerHTML = data;
-        startmoni();
+        startmoni_todo();
     });
 }
 
