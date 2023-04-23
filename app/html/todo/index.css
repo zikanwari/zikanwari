@@ -30,7 +30,7 @@ label {
 }
 
 /* ボタンのスタイル */
-#setdata {
+#settask {
     padding: 8px 16px;
     background-color: #4CAF50;
     color: #fff;
@@ -44,14 +44,14 @@ label {
 }
 
 /* ボタンにマウスが乗ったときのスタイル */
-#setdata:hover {
+#settask:hover {
     background-color: #3e8e41;
 }
 
 
 /* 入力フィールドのスタイル */
 input[type="text"],
-input[type="password"] {
+input[type="date"] {
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
@@ -59,7 +59,7 @@ input[type="password"] {
     box-sizing: border-box;
 }
 input[type="text"]:focus,
-input[type="password"]:focus {
+input[type="date"]:focus {
     outline: none;
     border-color: #4CAF50;
     box-shadow: 0 0 5px #4CAF50;
