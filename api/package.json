@@ -4,13 +4,13 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/launchpencil/zikanwari.git"
+    "url": "git+https://github.com/zikanwari/zikanwari.git"
   },
   "author": "launchpencil",
   "bugs": {
-    "url": "https://github.com/launchpencil/zikanwari/issues"
+    "url": "https://github.com/zikanwari/zikanwari/issues"
   },
-  "homepage": "https://github.com/launchpencil/zikanwari#readme",
+  "homepage": "https://github.com/zikanwari/zikanwari#readme",
   "dependencies": {
     "http": "^0.0.1-security",
     "mysql2": "^3.2.0",

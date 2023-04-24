@@ -21,7 +21,7 @@ function syncdata() {
                 update();
         })
         .catch(error => {
-            alert('時間割のデータ取得に失敗しました。');
+            alert('時間割のデータ更新に失敗しました。');
             update();
         });
 
