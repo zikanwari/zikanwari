@@ -2,6 +2,7 @@ var username = localStorage.getItem('user');
 var password = localStorage.getItem('pass');
 
 function startmoni_todo() {
+  taskupdate();
 
   document.getElementById('settask').addEventListener('click',() => {
 
@@ -9,11 +10,11 @@ function startmoni_todo() {
         .then(response => response.text())
         .then(data => {
                 alert(data);
-                update();
+                taskupdate();
         })
         .catch(error => {
             alert('タスクのデータ更新に失敗しました。');
-            update();
+            taskupdate();
         });
   });
 
