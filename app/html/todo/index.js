@@ -50,7 +50,10 @@ function taskupdate() {
           }
           a.pop();
           for (let index = 0; index < a.length; index++) {
-            document.getElementsByClassName("table").innerHTML += "<div>" + a[index] + "</div>";
+            var newElement = document.createElement("div");
+            newElement.textContent = a[index];
+            
+            document.getElementsByClassName("table").appendChild(newElement);
           }
   })
   .catch(error => {
