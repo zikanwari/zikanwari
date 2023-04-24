@@ -10,10 +10,6 @@ zikanwari
 [![LINE CI](https://github.com/zikanwari/zikanwari/actions/workflows/line-build.yml/badge.svg)](https://github.com/zikanwari/zikanwari/actions/workflows/line-build.yml)
 [![App CI](https://github.com/zikanwari/zikanwari/actions/workflows/app-build.yml/badge.svg)](https://github.com/zikanwari/zikanwari/actions/workflows/app-build.yml)
 
-multisong
-
-[![multisong CI](https://github.com/zikanwari/zikanwari/actions/workflows/multisong.yml/badge.svg)](https://github.com/zikanwari/zikanwari/actions/workflows/multisong.yml)
-
 ---
 
 ## 導入にあたって

@@ -5,7 +5,7 @@ function startmoni_todo() {
 
   document.getElementById('settask').addEventListener('click',() => {
 
-    fetch('https://api.launchpencil.f5.si/todo/add/?user=' + username + '&pass=' + password + '&name=' + taskname + '&date=' + taskdate)
+    fetch('https://api.launchpencil.f5.si/todo/add/?user=' + username + '&pass=' + password + '&name=' + document.getElementById("name").value + '&date=' + document.getElementById("date").value)
         .then(response => response.text())
         .then(data => {
                 alert(data);
