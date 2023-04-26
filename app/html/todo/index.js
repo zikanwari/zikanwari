@@ -2,6 +2,8 @@ var username = localStorage.getItem('user');
 var password = localStorage.getItem('pass');
 
 function startmoni_todo() {
+  var username = localStorage.getItem('user');
+  var password = localStorage.getItem('pass');
   taskupdate();
 
   document.getElementById('settask').addEventListener('click',() => {
