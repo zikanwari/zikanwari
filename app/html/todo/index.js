@@ -12,7 +12,7 @@ function startmoni_todo() {
         .then(response => response.text())
         .then(data => {
                 alert(data);
-                taskupdate();
+                changetodo();
         })
         .catch(error => {
             alert('タスクのデータ更新に失敗しました。');
