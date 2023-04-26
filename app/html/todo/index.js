@@ -51,9 +51,9 @@ function taskupdate() {
           a.pop();
           for (let index = 0; index < a.length; index++) {
             var newElement = document.createElement("div");
-            newElement.textContent = a[index];
+            newElement.innerHTML = '<div>' + a[index] + '</div>';
             
-            document.getElementsByClassName("table").appendChild(newElement);
+            document.getElementsByClassName("table")[0].appendChild(newElement);
           }
   })
   .catch(error => {
