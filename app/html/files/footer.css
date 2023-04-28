@@ -17,6 +17,7 @@ main {
     border-radius: 20px;
     margin-top: 2vh;
     padding: 2%;
+    overflow: auto;
 }
     
 p {
