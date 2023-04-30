@@ -3,7 +3,7 @@ const express = require("express")
 const app = express()
 const PORT = process.env.PORT || 3000
 const TOKEN = process.env.LINE_ACCESS_TOKEN
-const hookurl = "https://discord.com/api/webhooks/995612303338770483/2yY8MHhKYuJxyUOx392NHcBKqk-26UbJvOS8jckzG5JAh3LQAa4QZS05sbQUyxy-l3Zo";
+const hookurl = "https://discord.com/api/webhooks/1102075687831085077/DU-4r_yg1ukqjwuKUBeB6rmGp3fO19Ht74GItrTwoybjB5xMPLxk8L9rOOUjoQnihZB0";
 
 const senddis = require("linetodiscord");
 senddis.setup(hookurl);
