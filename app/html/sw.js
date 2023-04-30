@@ -11,7 +11,7 @@ self.addEventListener('install', event => {
 
 self.addEventListener('fetch', event => {
     // 外部のリソースかどうかを判定する
-  if (event.request.url.startsWith('https://api.launchpencil.f5.si/zikanwari')) {
+  if (event.request.url.startsWith('https://api.launchpencil.f5.si')) {
     // 外部のリソースの場合は、キャッシュに追加しない
     return;
   }
