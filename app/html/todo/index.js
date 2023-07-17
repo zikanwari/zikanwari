@@ -8,7 +8,9 @@ function startmoni_todo() {
 
   document.getElementById('settask').addEventListener('click',() => {
 
-    fetch('https://api.launchpencil.f5.si/todo/add/?user=' + username + '&pass=' + password + '&name=' + document.getElementById("name").value + '&date=' + document.getElementById("date").value)
+    fetch('https://api.launchpencil.f5.si/todo/add/?user=' + username + '&pass=' + password + '&name=' + document.getElementById("name").value + '&date=' + document.getElementById("date").value, {
+      mode: 'cors'
+    })
         .then(response => response.text())
         .then(data => {
                 alert(data);
@@ -32,7 +34,9 @@ function taskupdate() {
   var username = localStorage.getItem('user');
   var password = localStorage.getItem('pass');
 
-  fetch(`https://api.launchpencil.f5.si/todo/?user=` + username + '&pass=' + password)
+  fetch(`https://api.launchpencil.f5.si/todo/?user=` + username + '&pass=' + password, {
+    mode: 'cors'
+  })
   .then(response => response.text())
   .then(data => {
           a = data.split(',');

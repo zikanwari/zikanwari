@@ -14,7 +14,9 @@ function syncdata() {
         var password = localStorage.getItem('pass');
         customSelect.classList.add("selected");
         
-        fetch('https://api.launchpencil.f5.si/zikanwari/change/?user=' + username + '&pass=' + password + '&id=' + index + '&subject=' + this.value)
+        fetch('https://api.launchpencil.f5.si/zikanwari/change/?user=' + username + '&pass=' + password + '&id=' + index + '&subject=' + this.value, {
+          mode: 'cors'
+        })
         .then(response => response.text())
         .then(data => {
                 alert(data);
@@ -37,7 +39,9 @@ function update() {
   var username = localStorage.getItem('user');
   var password = localStorage.getItem('pass');
 
-  fetch(`https://api.launchpencil.f5.si/zikanwari/?user=` + username + `&pass=` + password)
+  fetch(`https://api.launchpencil.f5.si/zikanwari/?user=` + username + `&pass=` + password, {
+    mode: 'cors'
+  })
   .then(response => response.text())
   .then(data => {
           a = data.split(',');
