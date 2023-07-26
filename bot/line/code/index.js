@@ -56,6 +56,9 @@ app.post("/webhook", function(req, res) {
             sendcustom(sdgs(), req.body.events[0].replyToken);
           }
           break;
+      case msgtxt.startsWith("シャッフル　") || msgtxt.startsWith("シャッフル "):
+        const shuffledOutput = shuffleString(input.slice(6));
+        console.log(shuffledOutput);
   
       default:
           if (/[月火水木金]曜/.test(msgtxt)) {
@@ -197,4 +200,16 @@ function sdgs() {
   r2 = Math.floor(Math.random() * shimoku.length)
 
   return kamiku[r1] + shimoku[r2];
+}
+
+
+function shuffleString(inputString) {
+  const charArray = inputString.split('');
+  
+  for (let i = charArray.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    [charArray[i], charArray[randomIndex]] = [charArray[randomIndex], charArray[i]];
+  }
+
+  return charArray.join('');
 }
