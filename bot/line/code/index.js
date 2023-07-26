@@ -57,8 +57,9 @@ app.post("/webhook", function(req, res) {
           }
           break;
       case msgtxt.startsWith("シャッフル　") || msgtxt.startsWith("シャッフル "):
-        const shuffledOutput = shuffleString(msgtxt.slice(6));
-        sendcustom(shuffledOutput, req.body.events[0].replyToken);
+          const shuffledOutput = shuffleString(msgtxt.slice(6));
+          sendcustom(shuffledOutput, req.body.events[0].replyToken);
+          break;
   
       default:
           if (/[月火水木金]曜/.test(msgtxt)) {
