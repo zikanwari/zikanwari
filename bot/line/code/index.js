@@ -86,6 +86,7 @@ function getdata(msg1, msg2, replyToken, url) {
     uri: url,
     headers: {'Content-type': 'application/json'},
   }, function(err, req, data){
+    console.log(data);
     a = data.split(',');
     a.pop();
     msg1 = a[7] + '曜日の時間割は、';
