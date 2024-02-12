@@ -33,6 +33,10 @@ function startmoni_todo() {
 function taskupdate() {
   var username = localStorage.getItem('user');
   var password = localStorage.getItem('pass');
+  
+  document.querySelector(".table > div > div").style.backgroundColor = listcolor;
+  document.querySelector(".table > div > div").style.borderColor = listline;
+  document.querySelector("#setdata, #settask").style.backgroundColor = buttoncolor;
 
   fetch(`https://api.launchpencil.f5.si/todo/?user=` + username + '&pass=' + password, {
     mode: 'cors'
@@ -58,8 +62,13 @@ function taskupdate() {
           for (let index = 0; index < a.length; index++) {
             var newElement = document.createElement("div");
             newElement.innerHTML = '<div>' + a[index] + '</div>';
-            
+
             document.getElementsByClassName("table")[0].appendChild(newElement);
+
+            document.querySelectorAll(".table > div > div").forEach(customSelect => {
+                customSelect.style.backgroundColor = listcolor;
+                customSelect.style.borderColor = listline;
+            })
           }
   })
   .catch(error => {

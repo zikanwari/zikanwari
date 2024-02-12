@@ -1,0 +1,29 @@
+{
+    "text": {
+        "color": "#000000"
+    },
+    "background": {
+        "start": "#c5dff5",
+        "end": "#7cc3ff"
+    },
+    "main": {
+        "background": "#ffffff"
+    },
+    "footer": {
+        "default": "#ddeeff",
+        "select": "#4ab6ff",
+        "icon": "#7f7f7f"
+    },
+    "accent": {
+        "line": "#007eff",
+        "button": "#005fbd"
+    },
+
+    "time": {
+        "odd": "#93b7ff",
+        "even": "#8ed6ff"
+    },
+    "other": {
+        "background": "#8ed6ff"
+    }
+}

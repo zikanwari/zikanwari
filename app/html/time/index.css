@@ -1,53 +1,44 @@
 main {
     overflow: auto;
 }
-.table {
-    border-collapse: separate;
+.table { /*上書き*/
     border-spacing: 10px;
-    display: table;
+    border: 0;
+}
+
+
+.table>div>div {
+    width: 20vw;
+    height: 8vh;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border: 0;
+}
+
+.table>div>div:nth-child(odd) {
+    background-color: #93b7ff;
+}
+
+.table>div>div:nth-child(even) {
+    background-color: #8ed6ff;
+}
+
+span {
+line-height: 1em;
+}
+
+@media (max-width: 767px) {
+.table>div>div {
+font-size: 0.8em;
+}
+}
+
+select {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    }
-    
-    .table>div {
-    display: table-row;
-    background-color: #2f3d58; /* ダークグレー */
-    }
-    
-    .table>div>div {
-        display: table-cell;
-        width: 20vw;
-        height: 8vh;
-        text-align: center;
-        vertical-align: middle;
-        border-radius: 10px;
-
-        position: relative;
-        overflow: hidden;
-    }
-
-    .table>div>div:nth-child(odd) {
-        background-color: #495e88; /* 暗めの青 */
-    }
-    
-    .table>div>div:nth-child(even) {
-        background-color: #354564; /* 暗めの青 */
-    }
-    
-    span {
-    line-height: 1em;
-    }
-    
-    @media (max-width: 767px) {
-    .table>div>div {
-    font-size: 0.8em;
-    }
-    }
-
-    select {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-      }
+    height: 100%;
+    opacity: 0;
+}

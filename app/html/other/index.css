@@ -1,82 +1,10 @@
-/* table要素のスタイル */
-.table {
-  display: table;
-  width: 100%;
-  background-color: #2c3e50;
-  border-collapse: separate;
-  border-spacing: 20px;
-  border-radius: 10px;
-}
-
-/* テーブルの各行のスタイル */
-.table > div {
-  display: table-row;
-}
-
-/* テーブルの各セルのスタイル */
-.table > div > div {
-  display: table-cell;
+.table > div > div,
+.table > div > div > div > div {
   padding: 20px;
-  vertical-align: middle;
   font-weight: bold;
-  border: 1px solid #ddd;
+}
+.table > div > div > div > div {
+  margin: 20px 0;
   border-radius: 10px;
-}
-
-/* ラベルのスタイル */
-label {
-    display: inline-block;
-    margin-bottom: 5px;
-}
-
-/* ボタンのスタイル */
-#setdata {
-    padding: 8px 16px;
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: block;
-    margin-top: 10px;
-    text-align: center;
-}
-
-/* ボタンにマウスが乗ったときのスタイル */
-#setdata:hover {
-    background-color: #3e8e41;
-}
-
-
-/* 入力フィールドのスタイル */
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-input[type="text"]:focus,
-input[type="password"]:focus {
-    outline: none;
-    border-color: #4CAF50;
-    box-shadow: 0 0 5px #4CAF50;
-}
-
-
-#form {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 1s ease-out;
-}
-
-#form.show {
-  max-height: 300px;
-}
-
-#togle {
-  width: 100%;
-  display: block;
+  background-color: #ddeeff;
 }

@@ -1,6 +1,59 @@
-.select {
-    background-color: #2b374f; /* 暗めの青 */
-    }
-#timetable {
-    color: #cdcdcd; /* グレー */
+.table {
+    display: table;
+    width: 100%;
+    border-collapse: separate;
+    
+    border-spacing: 20px;
+    border-radius: 10px;
+}
+.table>div {
+    display: table-row;
+}
+.table > div > div {
+    display: table-cell;
+    vertical-align: middle;
+    border-radius: 10px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus {
+    outline: none;
+    border-color: #007eff;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+#form, #form2 {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease-out;
+}
+#form2 {
+    transition: max-height 1s ease-out;
+}
+
+#form.show {
+    max-height: 300px;
+}
+#form2.show {
+    max-height: 200px;
+}
+
+#togle, #togle2 {
+    width: 100%;
+    display: block;
 }

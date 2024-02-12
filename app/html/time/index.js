@@ -4,9 +4,7 @@ var password = localStorage.getItem('pass');
 function syncdata() {
   update();
 
-    const customSelects = document.querySelectorAll(".custom-select");
-
-    customSelects.forEach((customSelect, index) => {
+    document.querySelectorAll(".custom-select").forEach((customSelect, index) => {
       const select = customSelect.querySelector("select");
 
       select.addEventListener("change", function() {
@@ -65,13 +63,24 @@ function update() {
               case '数学Ⅰ・Ⅱ':
                 document.getElementById(index).innerText = '数学\nⅠ・Ⅱ'
                 break;
-            
+              case '言語文化':
+                  document.getElementById(index).innerText = '言語\n文化'
+                  break;
               default:
                 document.getElementById(index).innerText = a[index];
                 break;
             }
             document.getElementById('s_' + index).value = a[index];
           }
+
+          document.querySelectorAll(".table>div>div:nth-child(odd)").forEach(customSelect => {
+              customSelect.style.backgroundColor = oddcolor;
+          })
+
+          document.querySelectorAll(".table>div>div:nth-child(even)").forEach(customSelect => {
+              customSelect.style.backgroundColor = evencolor;
+          })
+
   })
   .catch(error => {
       document.getElementById('timetable').innerText = '時間割のデータ取得に失敗しました。';
