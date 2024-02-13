@@ -1,4 +1,4 @@
-const CACHE_NAME = `zikanwari-v1.5`;
+const CACHE_NAME = `zikanwari-v1.5.1`;
 
 self.addEventListener('install', event => {
   event.waitUntil((async () => {
@@ -46,7 +46,6 @@ self.addEventListener('activate', event => {
     // Filter out the old cache keys that have the app name in them.
     const oldCacheKeys = cacheKeys.filter(key => key.indexOf('zikanwari-') === 0 && key !== CACHE_NAME);
     console.log("New version!!! Yeahhhhh!!!")
-    console.log(CACHE_NAME + " -> " + key.indexOf('zikanwari-'))
 
     // Delete the old caches.
     await Promise.all(oldCacheKeys.map(key => caches.delete(key)));
