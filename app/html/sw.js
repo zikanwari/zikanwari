@@ -51,3 +51,10 @@ self.addEventListener('activate', event => {
     await Promise.all(oldCacheKeys.map(key => caches.delete(key)));
   })());
 });
+
+self.addEventListener('push', event => {
+  console.log("push notification received");
+  self.registration.showNotification("通知が届きました", {
+    body: event.data.text()
+  })
+})
