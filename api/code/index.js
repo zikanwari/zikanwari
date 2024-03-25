@@ -14,7 +14,6 @@ const server = http.createServer((req, res) => {
       });
 
       req.on('end', () => {
-        body = JSON.parse(body)
         
         const username = body.user;
         const password = body.pass;
