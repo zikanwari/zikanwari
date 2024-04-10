@@ -24,6 +24,11 @@ function startmoni() {
         document.getElementById('form3').classList.toggle("show");
     });
   });
+  document.querySelectorAll('#togle4').forEach(function(element) {
+    element.addEventListener('click', function() {
+        document.getElementById('form4').classList.toggle("show");
+    });
+  });
 
   document.querySelectorAll(".table > div > div").forEach(customSelect => {
       customSelect.style.backgroundColor = listcolor;
