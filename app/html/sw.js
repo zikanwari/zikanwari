@@ -25,14 +25,11 @@ self.addEventListener('fetch', event => {
       return cachedResponse;
     } else {
         try {
-          // If the resource was not in the cache, try the network.
           const fetchResponse = await fetch(event.request);
 
-          // Save the resource in the cache and return it.
           cache.put(event.request, fetchResponse.clone());
           return fetchResponse;
         } catch (e) {
-          // The network failed.
         }
     }
   })());
@@ -40,10 +37,8 @@ self.addEventListener('fetch', event => {
 
 self.addEventListener('activate', event => {
   event.waitUntil((async () => {
-    // Get all the cache keys (cache names)
     const cacheKeys = await caches.keys();
 
-    // Filter out the old cache keys that have the app name in them.
     const oldCacheKeys = cacheKeys.filter(key => key.indexOf('zikanwari-') === 0 && key !== CACHE_NAME);
     console.log("New version!!! Yeahhhhh!!!")
 
@@ -54,7 +49,8 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('push', event => {
   console.log("push notification received");
-  self.registration.showNotification("通知が届きました", {
-    body: event.data.text()
+  self.registration.showNotification(event.data.json().title, {
+    icon: event.data.json().icon,
+    body: event.data.json().body
   })
 })

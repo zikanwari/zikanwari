@@ -37,12 +37,9 @@ label {
     margin-bottom: 5px;
 }
 
-#form, #form2 {
+#form, #form2, #form3 {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 1s ease-out;
-}
-#form2 {
     transition: max-height 1s ease-out;
 }
 
@@ -52,8 +49,11 @@ label {
 #form2.show {
     max-height: 400px;
 }
+#form3.show {
+    max-height: 400px;
+}
 
-#togle, #togle2 {
+#togle, #togle2, #togle3 {
     width: 100%;
     display: block;
 }
