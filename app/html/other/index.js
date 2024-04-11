@@ -160,7 +160,10 @@ function serverRegister() {
 
         console.log(subscriptiondata.endpoint);
         console.log(subscriptiondata.keys.p256dh);
-        console.log(subscriptiondata.keys.auth)
+        console.log(subscriptiondata.keys.auth);
+        
+        localStorage.setItem('nikka', document.getElementById("nikkanotice").checked);
+        localStorage.setItem('kadai', document.getElementById("kadainotice").checked);
 
         fetch(`https://api.launchpencil.f5.si/zikanwari/notification`, {
           method: "POST",
@@ -175,9 +178,6 @@ function serverRegister() {
                 "kadai": document.getElementById("kadainotice").checked
               })
         })
-
-        localStorage.setItem('nikka', document.getElementById("nikkanotice").checked);
-        localStorage.setItem('kadai', document.getElementById("kadainotice").checked);
 
         .then(response => response.text())
         .catch(error => {
