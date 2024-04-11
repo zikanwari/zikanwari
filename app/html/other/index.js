@@ -1,4 +1,8 @@
 function startmoni() {
+
+  document.getElementById("nikkanotice").checked = localStorage.getItem('nikka')
+  document.getElementById("kadainotice").checked = localStorage.getItem('kadai')
+
   document.getElementById('setdata').addEventListener('click',() => {
 
     localStorage.setItem('user', document.getElementById("username").value);
@@ -171,6 +175,10 @@ function serverRegister() {
                 "kadai": document.getElementById("kadainotice").checked
               })
         })
+
+        localStorage.setItem('nikka', document.getElementById("nikkanotice").checked);
+        localStorage.setItem('kadai', document.getElementById("kadainotice").checked);
+
         .then(response => response.text())
         .catch(error => {
             alert('登録に失敗しました。時間をおいてもう一度試してください。');
