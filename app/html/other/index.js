@@ -1,7 +1,16 @@
 function startmoni() {
 
-  document.getElementById("nikkanotice").checked = localStorage.getItem('nikka')
-  document.getElementById("kadainotice").checked = localStorage.getItem('kadai')
+  if (localStorage.getItem('nikka') == "true") {
+    document.getElementById("nikkanotice").checked = true;
+  } else {
+    document.getElementById("nikkanotice").checked = false;
+  }
+
+  if (localStorage.getItem('kadai') == "true") {
+    document.getElementById("kadainotice").checked = true;
+  } else {
+    document.getElementById("kadainotice").checked = false;
+  }
 
   document.getElementById('setdata').addEventListener('click',() => {
 
@@ -161,7 +170,7 @@ function serverRegister() {
         console.log(subscriptiondata.endpoint);
         console.log(subscriptiondata.keys.p256dh);
         console.log(subscriptiondata.keys.auth);
-        
+
         localStorage.setItem('nikka', document.getElementById("nikkanotice").checked);
         localStorage.setItem('kadai', document.getElementById("kadainotice").checked);
 
