@@ -114,7 +114,46 @@ const server = http.createServer((req, res) => {
         });
       });
 
-    } else {
+    } else if (req.url.startsWith('/zikanwari/tomorrow')) {
+      connection.connect((err) => {
+        if (err) {
+          console.error('error connecting: ' + err.message);
+          res.end('エラー,' + err.message);
+          return;
+        }
+
+        let day = new Date().getDay()
+
+        const sql = "SELECT * FROM ??";
+    
+        connection.query(sql, [username], (err, results, fields) => {
+            if (err) {
+                console.error('error querying: ' + err.stack);
+                res.write('エラー,' + err.message);
+                return;
+            }
+
+            let week = [
+              '月曜日', //日
+              '火曜日', //月
+              '水曜日', //火
+              '木曜日', //水
+              '金曜日', //木
+              '月曜日', //金
+              '月曜日', //土
+            ];
+    
+            results.forEach((row) => {
+                res.write(
+                    row[week[0]] + ','
+                  );
+            });
+    
+            connection.end();
+            res.end();
+        });
+      });
+    } else{
       connection.connect((err) => {
         if (err) {
           console.error('error connecting: ' + err.message);
