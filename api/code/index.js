@@ -124,6 +124,16 @@ const server = http.createServer((req, res) => {
 
         let day = new Date().getDay()
 
+        let week = [
+          '月曜日', //日
+          '火曜日', //月
+          '水曜日', //火
+          '木曜日', //水
+          '金曜日', //木
+          '月曜日', //金
+          '月曜日', //土
+        ];
+
         const sql = "SELECT * FROM ??";
     
         connection.query(sql, [username], (err, results, fields) => {
@@ -132,16 +142,6 @@ const server = http.createServer((req, res) => {
                 res.write('エラー,' + err.message);
                 return;
             }
-
-            let week = [
-              '月曜日', //日
-              '火曜日', //月
-              '水曜日', //火
-              '木曜日', //水
-              '金曜日', //木
-              '月曜日', //金
-              '月曜日', //土
-            ];
     
             results.forEach((row) => {
                 res.write(

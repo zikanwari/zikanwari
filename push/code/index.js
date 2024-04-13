@@ -74,7 +74,7 @@ connection.getConnection((err) => {
 
 function sendNotification(classid, payload) {
 
-        connection.query("SELECT * FROM `user` WHERE user = ?", [classid], (err, results, fields) => {
+        connection.query("SELECT * FROM `user` WHERE user = ? AND nikka = 1", [classid], (err, results, fields) => {
             if (err) {
                 console.error('error querying: ' + err.stack);
                 return;
