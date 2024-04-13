@@ -145,7 +145,7 @@ const server = http.createServer((req, res) => {
     
             results.forEach((row) => {
                 res.write(
-                    row[week[0]] + ','
+                    row[week[day]] + ','
                   );
             });
     
