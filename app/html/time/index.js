@@ -37,6 +37,40 @@ function update() {
   var username = localStorage.getItem('user');
   var password = localStorage.getItem('pass');
 
+  subjects = [
+    "英語C",
+    "英語E",
+    "数学Ⅱ",
+    "数学B",
+    "論国",
+    "古典",
+    "体育",
+    "物生",
+    '化学',
+    "歴史",
+    "地理",
+    "公民",
+    "国情",
+    "保健",
+    "HRA",
+    "SSH",
+    "芸術",
+    "その他",
+    "なし"
+  ]
+
+  for (let cellid = 0; cellid < 34; cellid++) {
+
+    subjects.forEach(subject => {
+
+      let optionElement = document.createElement("option");
+      optionElement.value = subject
+      optionElement.text = subject
+
+      document.getElementById('s_' + cellid).appendChild(optionElement)
+    });
+  }
+
   fetch(`https://api.launchpencil.f5.si/zikanwari/?user=` + username + `&pass=` + password, {
     mode: 'cors'
   })
