@@ -13,6 +13,8 @@ classlist = [
     `7329`
 ]
 
+let classcount = 0
+
 
 webpush.setVapidDetails(
     'mailto:launchpencil@gmail.com',
@@ -77,12 +79,6 @@ connection.getConnection((err) => {
                 sendNotification(classlist[i], payload)
             }
         });
-
-        if (i == classlist.length) {
-            console.log('all class done!');
-            connection.end();
-            connection2.end();
-        }
     }
 });
 
@@ -118,7 +114,12 @@ function sendNotification(classid, payload) {
 
                 console.log(classid + row.endpoint)
             });
-            
+            classcount++
         });
     });
+    if (classcount == classlist.length) {
+        console.log('all class done!');
+        connection.end();
+        connection2.end();
+    }
 }

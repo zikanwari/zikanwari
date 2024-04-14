@@ -70,11 +70,6 @@ connection.getConnection((err) => {
             sendNotification(classlist[i], payload)
         });
     }
-
-    if (i == classlist.length) {
-        console.log('all class done!');
-        connection.end();
-    }
 });
 
 function sendNotification(classid, payload) {
@@ -102,6 +97,11 @@ function sendNotification(classid, payload) {
                 });
 
                 console.log(classid + row.endpoint)
-            });            
+            });
+            classcount++
         });
+    if (classcount == classlist.length) {
+        console.log('all class done!');
+        connection.end();
+    }
 }
