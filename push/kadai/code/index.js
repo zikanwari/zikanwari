@@ -77,6 +77,8 @@ connection.getConnection((err) => {
                 });
 
                 sendNotification(classlist[i], payload)
+            } else {
+                classcount++
             }
         });
     }
