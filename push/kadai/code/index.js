@@ -62,6 +62,8 @@ connection.getConnection((err) => {
 
             if (results.length == 0) {
 
+                let kadaistr = ''
+
                 results.forEach((element, index) => {
                     kadaistr += index+1 + element[week[day]] + '、'
                 });
