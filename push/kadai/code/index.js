@@ -52,35 +52,25 @@ connection.getConnection((err) => {
             }
 
             console.log(classlist[i])
-            if (results.length == 0) {
 
-                let kadaistr = ''
+            let kadaistr = ''
 
-                results.forEach((element) => {
-                    kadaistr += element['name'] + '、'
-                });
+            results.forEach((element) => {
+                kadaistr += element['name'] + '、'
+            });
         
-                var payload = JSON.stringify({
-                    title: '明日が期限の提出物があります',
-                    body : '明日までの提出物は\n' + kadaistr + 'です',
-                    icon: "https://app.zikanwari.f5.si/favicon.png"
-                });
-                if (kadaistr != '') {
-                    sendNotification(classlist[i], payload)
-                    console.log(payload.body)
-                } else {
-                    classcount++
-
-                    if (classcount == classlist.length) {
-                        console.log('all class done!');
-                        connection.end();
-                        connection2.end();
-                    }
-                }
+            var payload = JSON.stringify({
+                title: '明日が期限の提出物があります',
+                body : '明日までの提出物は\n' + kadaistr + 'です',
+                icon: "https://app.zikanwari.f5.si/favicon.png"
+            });
+            if (kadaistr != '') {
+                sendNotification(classlist[i], payload)
+                console.log(payload.body)
             } else {
                 classcount++
 
-                if (classcount == classlist.length) {
+            if (classcount == classlist.length) {
                     console.log('all class done!');
                     connection.end();
                     connection2.end();
