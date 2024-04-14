@@ -61,9 +61,10 @@ connection.getConnection((err) => {
             }
 
             if (results.length == 0) {
+
                 let kadaistr = results.slice(0, -1)
 
-                console.log(classlist[i] + kadaitstr)
+                console.log(classlist[i] + kadaistr)
         
                 var payload = JSON.stringify({
                     title: '明日が期限の提出物があります',
