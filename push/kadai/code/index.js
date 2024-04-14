@@ -45,7 +45,7 @@ connection.getConnection((err) => {
 
     for (let i = 0; i < classlist.length; i++) {
         
-        connection.query("SELECT * FROM ?? WHERE date = CURDATE();", [classlist[i]], (err, results, fields) => {
+        connection.query("SELECT * FROM ?? WHERE date = DATE_ADD(CURDATE(), INTERVAL 1 DAY)", [classlist[i]], (err, results, fields) => {
             if (err) {
                 console.error('error querying: ' + err.stack);
                 return;
