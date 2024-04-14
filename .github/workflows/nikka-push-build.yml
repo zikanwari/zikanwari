@@ -1,4 +1,4 @@
-name: Push CI
+name: Nikka Push CI
 
 on:
   workflow_dispatch:

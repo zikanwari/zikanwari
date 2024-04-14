@@ -1,4 +1,4 @@
-name: Push CI
+name: Kadai Push CI
 
 on:
   workflow_dispatch:
