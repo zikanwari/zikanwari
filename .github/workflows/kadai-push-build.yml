@@ -38,4 +38,4 @@ jobs:
         context: push/kadai
         platforms: linux/amd64,linux/arm64
         push: true
-        tags: ghcr.io/zikanwari/zikanwari:push
+        tags: ghcr.io/zikanwari/zikanwari:kadai_push
