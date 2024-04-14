@@ -24,6 +24,13 @@ const connection = mysql.createPool({
     host: '192.168.0.3',
     user: process.env.user,
     password: process.env.pass,
+    database: 'todo',
+    connectionLimit: 10
+});
+const connection2 = mysql.createPool({
+    host: '192.168.0.3',
+    user: process.env.user,
+    password: process.env.pass,
     database: 'zikan',
     connectionLimit: 10
 });
@@ -47,34 +54,38 @@ connection.getConnection((err) => {
 
     for (let i = 0; i < classlist.length; i++) {
         
-        connection.query("SELECT ?? FROM ??", [week[day], classlist[i]], (err, results, fields) => {
+        connection.query("SELECT * FROM ?? WHERE date = CURDATE();", [classlist[i]], (err, results, fields) => {
             if (err) {
                 console.error('error querying: ' + err.stack);
                 return;
             }
 
-            var subjectstr = ''
+            if (results != '') {
+                let kadaistr = results.slice(0, -1)
 
-            results.forEach((element, index) => {
-                subjectstr += index+1 + element[week[day]] + ' '
-            });
+                console.log(classlist[i] + kadaitstr)
+        
+                var payload = JSON.stringify({
+                    title: '明日が期限の提出物があります',
+                    body : '明日までの提出物は\n' + kadaistr + 'です',
+                    icon: "https://app.zikanwari.f5.si/favicon.png"
+                });
 
-            console.log(classlist[i] + subjectstr)
-    
-            var payload = JSON.stringify({
-                title: '日課表のお知らせ',
-                body : '明日の日課表は\n' + subjectstr + 'です',
-                icon: "https://app.zikanwari.f5.si/favicon.png"
-            });
-
-            sendNotification(classlist[i], payload)
+                sendNotification(classlist[i], payload)
+            }
         });
     }
 });
 
 function sendNotification(classid, payload) {
 
-        connection.query("SELECT * FROM `user` WHERE user = ? AND nikka = 1", [classid], (err, results, fields) => {
+    connection2.getConnection((err) => {
+        if (err) {
+            console.error('error connecting: ' + err.message);
+            return;
+        }
+
+        connection2.query("SELECT * FROM `user` WHERE user = ? AND kadai = 1", [classid], (err, results, fields) => {
             if (err) {
                 console.error('error querying: ' + err.stack);
                 return;
@@ -88,19 +99,23 @@ function sendNotification(classid, payload) {
                         auth: row.auth
                     }
                 };
-    
+
                 webpush.sendNotification(
                     pushSubscription,
                     payload
                 ).catch(error => {
                     console.error(error.stack);
                 });
+
+                console.log(classid + row.endpoint)
             });
     
             if (classid == '7328') {
                 console.log('all class done!');
                 connection.end();
+                connection2.end();
             }
             
         });
+    });
 }
