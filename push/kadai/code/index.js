@@ -58,6 +58,8 @@ connection.getConnection((err) => {
             results.forEach((element) => {
                 kadaistr += element['name'] + '、'
             });
+
+            kadaistr = kadaistr.slice(0, -1)
         
             var payload = JSON.stringify({
                 title: '明日が期限の提出物があります',
@@ -66,7 +68,7 @@ connection.getConnection((err) => {
             });
             if (kadaistr != '') {
                 sendNotification(classlist[i], payload)
-                console.log(payload.body)
+                console.log(kadaistr)
             } else {
                 classcount++
 
