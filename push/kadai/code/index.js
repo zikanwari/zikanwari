@@ -115,11 +115,12 @@ function sendNotification(classid, payload) {
                 console.log(classid + row.endpoint)
             });
             classcount++
+
+            if (classcount == classlist.length) {
+                console.log('all class done!');
+                connection.end();
+                connection2.end();
+            }
         });
     });
-    if (classcount == classlist.length) {
-        console.log('all class done!');
-        connection.end();
-        connection2.end();
-    }
 }
