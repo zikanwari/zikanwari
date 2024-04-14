@@ -78,11 +78,24 @@ connection.getConnection((err) => {
                 });
                 if (kadaistr != '') {
                     sendNotification(classlist[i], payload)
+                    console.log(payload.body)
                 } else {
                     classcount++
+                    
+                    if (classcount == classlist.length) {
+                        console.log('all class done!');
+                        connection.end();
+                        connection2.end();
+                    }
                 }
             } else {
                 classcount++
+
+                if (classcount == classlist.length) {
+                    console.log('all class done!');
+                    connection.end();
+                    connection2.end();
+                }
             }
         });
     }
