@@ -99,7 +99,7 @@ function sendNotification(classid, payload) {
                 console.log(classid + row.endpoint)
             });
     
-            if (classid == '7328') {
+            if (classid == '7329') {
                 console.log('all class done!');
                 connection.end();
             }
