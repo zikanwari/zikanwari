@@ -60,7 +60,7 @@ connection.getConnection((err) => {
                 return;
             }
 
-            if (results != '') {
+            if (results.length == 0) {
                 let kadaistr = results.slice(0, -1)
 
                 console.log(classlist[i] + kadaitstr)
