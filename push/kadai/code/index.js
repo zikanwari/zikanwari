@@ -78,6 +78,8 @@ connection.getConnection((err) => {
                 });
                 if (kadaistr != '') {
                     sendNotification(classlist[i], payload)
+                } else {
+                    classcount++
                 }
             } else {
                 classcount++
