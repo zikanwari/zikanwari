@@ -37,17 +37,6 @@ const connection2 = mysql.createPool({
     connectionLimit: 10
 });
 
-let day = new Date().getDay()
-let week = [
-    '月曜日', //日
-    '火曜日', //月
-    '水曜日', //火
-    '木曜日', //水
-    '金曜日', //木
-    '月曜日', //金
-    '月曜日', //土
-];
-
 connection.getConnection((err) => {
     if (err) {
         console.error('error connecting: ' + err.message);
@@ -67,8 +56,8 @@ connection.getConnection((err) => {
 
                 let kadaistr = ''
 
-                results.forEach((element, index) => {
-                    kadaistr += index+1 + element[week[day]] + '、'
+                results.forEach((element) => {
+                    kadaistr += element['name'] + '、'
                 });
         
                 var payload = JSON.stringify({
@@ -81,7 +70,7 @@ connection.getConnection((err) => {
                     console.log(payload.body)
                 } else {
                     classcount++
-                    
+
                     if (classcount == classlist.length) {
                         console.log('all class done!');
                         connection.end();
