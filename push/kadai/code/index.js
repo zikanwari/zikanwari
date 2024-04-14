@@ -63,7 +63,7 @@ connection.getConnection((err) => {
             if (results.length == 0) {
 
                 results.forEach((element, index) => {
-                    kafaistr += index+1 + element[week[day]] + '、'
+                    kadaistr += index+1 + element[week[day]] + '、'
                 });
         
                 var payload = JSON.stringify({
