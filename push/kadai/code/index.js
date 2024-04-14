@@ -62,6 +62,7 @@ connection.getConnection((err) => {
                 return;
             }
 
+            console.log(classlist[i])
             if (results.length == 0) {
 
                 let kadaistr = ''
@@ -75,8 +76,9 @@ connection.getConnection((err) => {
                     body : '明日までの提出物は\n' + kadaistr + 'です',
                     icon: "https://app.zikanwari.f5.si/favicon.png"
                 });
-
-                sendNotification(classlist[i], payload)
+                if (kadaistr != '') {
+                    sendNotification(classlist[i], payload)
+                }
             } else {
                 classcount++
             }
