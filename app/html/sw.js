@@ -1,4 +1,4 @@
-const CACHE_NAME = `zikanwari-v1.6.3`;
+const CACHE_NAME = `zikanwari-v1.6.4`;
 
 self.addEventListener('install', event => {
   event.waitUntil((async () => {
