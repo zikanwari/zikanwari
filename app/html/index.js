@@ -75,7 +75,10 @@ function updatetheme(themename) {
 
         noselect = data.footer.default;
         select = data.footer.select;
-        document.querySelector("svg").style.fill = data.footer.icon;
+
+        document.querySelectorAll("svg").forEach((icons) => {
+            icons.style.fill = data.footer.icon;
+        });
 
         listcolor = data.other.background;
         listline = data.accent.line;

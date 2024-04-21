@@ -8,23 +8,39 @@ function startmoni_todo() {
 
   document.getElementById('settask').addEventListener('click',() => {
 
-    fetch('https://api.launchpencil.f5.si/todo/add/?user=' + username + '&pass=' + password + '&name=' + document.getElementById("name").value + '&date=' + document.getElementById("date").value, {
-      mode: 'cors'
-    })
-        .then(response => response.text())
-        .then(data => {
-                alert(data);
-                changetodo();
-        })
-        .catch(error => {
-            alert('タスクのデータ更新に失敗しました。');
-            taskupdate();
-        });
+    let taskname = document.getElementById("name").value
+
+    if (taskname.includes(',')) {
+      alert('カンマ(,)を含むことはできません。\n 代わりに読点(、)を使ってください。')
+    } else if (taskname.length <= 1) {
+      alert('名前が短すぎます。(最低2文字以上)')
+    } else {
+
+      fetch('https://api.launchpencil.f5.si/todo/add/?user=' + username + '&pass=' + password + '&name=' + taskname + '&date=' + document.getElementById("date").value, {
+        mode: 'cors'
+      })
+          .then(response => response.text())
+          .then(data => {
+                  alert(data);
+                  changetodo();
+          })
+          .catch(error => {
+              alert('タスクのデータ更新に失敗しました。');
+              taskupdate();
+          });
+      }
   });
 
   document.querySelectorAll('#togle, #settask').forEach(function(element) {
     element.addEventListener('click', function() {
       document.getElementById('form').classList.toggle("show");
+    });
+  });
+
+  document.querySelectorAll('#togle2, #modtask, #deltask').forEach(function(element) {
+    element.addEventListener('click', function() {
+      console.log('clicked')
+      document.getElementById('form5').classList.toggle("show");
     });
   });
 }
