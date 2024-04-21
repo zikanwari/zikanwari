@@ -63,7 +63,7 @@ connection.getConnection((err) => {
         
             var payload = JSON.stringify({
                 title: '明日が期限の提出物があります',
-                body : '明日までの提出物は\n' + kadaistr + 'です',
+                body : kadaistr + 'の提出日が明日になっています。',
                 icon: "https://app.zikanwari.f5.si/favicon.png"
             });
             if (kadaistr != '') {
