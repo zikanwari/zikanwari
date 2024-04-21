@@ -71,3 +71,14 @@ svg {
 #deltask {
     background-color: rgb(255, 72, 72);
 }
+
+
+@media screen and (orientation: landscape) {
+    main {
+        height: 70%;
+    }
+
+    footer > div {
+        font-size: 5vb;
+    }
+}
