@@ -67,7 +67,7 @@ function updatetheme(themename) {
     .then(data => {
         console.log(data);
 
-        $("meta[name=theme-color]").attr("content", data.background.start)
+        document.querySelector('meta[name="theme-color"]').setAttribute("content", data.background.start)
 
         document.body.style.background = "linear-gradient(" + data.background.start + "," + data.background.end + ")";
         document.body.style.color = data.text.color;
