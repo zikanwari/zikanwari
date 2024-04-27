@@ -11,7 +11,7 @@
     },
     "footer": {
         "default": "#b6f0c1",
-        "select": "#18ba3e",
+        "select": "#26b748",
         "icon": "#7f7f7f"
     },
     "accent": {
@@ -20,7 +20,7 @@
     },
 
     "time": {
-        "odd": "#5ada5e",
+        "odd": "#62d966",
         "even": "#a8ed85"
     },
     "other": {
