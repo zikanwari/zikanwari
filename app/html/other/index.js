@@ -47,6 +47,11 @@ function startmoni() {
       customSelect.style.backgroundColor = listcolor;
       customSelect.style.borderColor = listline;
   })
+
+  document.querySelectorAll(".table > div > div > div > div").forEach(customSelect => {
+    customSelect.style.backgroundColor = noselect;
+    customSelect.style.borderColor = listline;
+})
   
   document.querySelector("#setdata, #settask").style.backgroundColor = buttoncolor;
 

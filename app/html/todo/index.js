@@ -9,14 +9,17 @@ function startmoni_todo() {
   document.getElementById('settask').addEventListener('click',() => {
 
     let taskname = document.getElementById("name").value
+    let datedata = document.getElementById("date").value
 
     if (taskname.includes(',')) {
       alert('カンマ(,)を含むことはできません。\n 代わりに読点(、)を使ってください。')
     } else if (taskname.length <= 1) {
       alert('名前が短すぎます。(最低2文字以上)')
+    } else if(document.getElementById("date").value == null){
+      alert('期限を指定してください。')
     } else {
 
-      fetch('https://api.launchpencil.f5.si/todo/add/?user=' + username + '&pass=' + password + '&name=' + taskname + '&date=' + document.getElementById("date").value, {
+      fetch('https://api.launchpencil.f5.si/todo/add/?user=' + username + '&pass=' + password + '&name=' + taskname + '&date=' + datedata, {
         mode: 'cors'
       })
           .then(response => response.text())
