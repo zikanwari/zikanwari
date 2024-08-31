@@ -76,7 +76,7 @@ app.post("/webhook", function(req, res) {
             sendcustom(sdgs(), req.body.events[0].replyToken);
           }
           break;
-      case msgtxt.startsWith("シャッフル　") || msgtxt.startsWith("シャッフル "):
+      case msgtxt.startsWith("シャッフル　") || msgtxt.startsWith("シャッフル ") || msgtxt.startsWith("シャッフル\n"):
           const shuffledOutput = shuffleString(msgtxt.slice(6));
           sendcustom(shuffledOutput, req.body.events[0].replyToken);
           break;
