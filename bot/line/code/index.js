@@ -10,6 +10,11 @@ senddis.setup(hookurl);
 
 const zikan_request = require('request');
 
+const headers = {
+  "Content-Type": "application/json",
+  "Authorization": "Bearer " + TOKEN
+}
+
 var send1 = '取得';
 var send2 = '';
 var sdgs10;
@@ -28,6 +33,21 @@ app.post("/webhook", function(req, res) {
   res.send("HTTP POST request sent to the webhook URL!")
   // ユーザーがボットにメッセージを送った場合、返信メッセージを送る
   if (req.body.events[0].type === "message") {
+
+    https.request(
+      {
+        "hostname": "api.line.me",
+        "path": "/v2/bot/chat/loading/start",
+        "method": "POST",
+        "headers": headers,
+        "body": JSON.stringify({
+          chatId: req.body.events[0].source.userId
+        })
+      }, (res) => {
+      res.on("data", (d) => {
+        console.log(d)
+      })
+    })
 
     console.log(req.body.events[0].source.userId);
     console.log(req.body.events[0].message);
@@ -119,11 +139,6 @@ function getdata(msg1, msg2, replyToken, url) {
       ]
     })
 
-    const headers = {
-      "Content-Type": "application/json",
-      "Authorization": "Bearer " + TOKEN
-    }
-
     const webhookOptions = {
       "hostname": "api.line.me",
       "path": "/v2/bot/message/reply",
@@ -162,12 +177,6 @@ function sendcustom(text, replyToken) {
       }
     ]
   })
-
-  // リクエストヘッダー
-  const headers = {
-    "Content-Type": "application/json",
-    "Authorization": "Bearer " + TOKEN
-  }
 
   // リクエストに渡すオプション
   const webhookOptions = {
