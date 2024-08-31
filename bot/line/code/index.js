@@ -41,7 +41,7 @@ app.post("/webhook", function(req, res) {
         "method": "POST",
         "headers": headers,
         "body": JSON.stringify({
-          chatId: req.body.events[0].source.userId
+          "chatId": req.body.events[0].source.userId
         })
       }, (res) => {
       res.on("data", (d) => {
