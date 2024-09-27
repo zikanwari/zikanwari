@@ -1,9 +1,43 @@
-.table > div > div,
-.table > div > div > div > div {
+.table>div>div,
+.table>div>div>div>div {
   padding: 20px;
   font-weight: bold;
+
+  /*Edited by kizaki*/
+  padding: 15px;
+  position: relative;
 }
-.table > div > div > div > div {
+
+/*Edited by kizaki*/
+.table>div>div:after {
+  content: "";
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  transform: rotate(225deg);
+  transform-origin: center center;
+  position: absolute;
+  right: 20px;
+  top: 18px;
+  transition: all 0.2s;
+}
+
+.table>div>div:has(.show):after {
+  transform: rotate(45deg);
+}
+
+.table>div>div:has(a):after {
+  display: none;
+}
+
+body.dark>div>div:after {
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+}
+
+.table>div>div>div>div {
   margin: 20px 0;
   border-radius: 10px;
   background-color: #ddeeff;
