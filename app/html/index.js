@@ -21,11 +21,11 @@ function changetime() {
 
     document.getElementById("time").style.backgroundColor = select;
     fetch(`time/index.html`)
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('timetable').innerHTML = data;
-        syncdata();
-    });
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('timetable').innerHTML = data;
+            syncdata();
+        });
 }
 
 function changeother() {
@@ -35,11 +35,11 @@ function changeother() {
     document.getElementById("todo").style.backgroundColor = noselect;
     document.getElementById("other").style.backgroundColor = select;
     fetch(`other/index.html`)
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('timetable').innerHTML = data;
-        startmoni();
-    });
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('timetable').innerHTML = data;
+            startmoni();
+        });
 }
 
 function changetodo() {
@@ -49,11 +49,11 @@ function changetodo() {
     document.getElementById("other").style.backgroundColor = noselect;
     document.getElementById("todo").style.backgroundColor = select;
     fetch(`todo/index.html`)
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('timetable').innerHTML = data;
-        startmoni_todo();
-    });
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('timetable').innerHTML = data;
+            startmoni_todo();
+        });
 }
 
 function updatetheme(themename) {
@@ -63,58 +63,65 @@ function updatetheme(themename) {
         updatetheme(theme);
     }
     fetch("theme/" + themename + ".json")
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
 
-        document.querySelector('meta[name="theme-color"]').setAttribute("content", data.background.start)
+            document.querySelector('meta[name="theme-color"]').setAttribute("content", data.background.start)
 
-        document.body.style.background = "linear-gradient(" + data.background.start + "," + data.background.end + ")";
-        document.body.style.color = data.text.color;
+            document.body.style.background = "linear-gradient(" + data.background.start + "," + data.background.end + ")";
+            document.body.style.color = data.text.color;
 
-        document.querySelector("main").style.backgroundColor = data.main.background;
-        document.querySelector("main").style.borderColor = data.accent.line;
+            document.querySelector("main").style.backgroundColor = data.main.background;
+            document.querySelector("main").style.borderColor = data.accent.line;
 
-        noselect = data.footer.default;
-        select = data.footer.select;
+            //edited by kizaki
+            if (data.text.color === "#ffffff") {
+                document.querySelector("body").className = "dark"
+            } else {
+                document.querySelector("body").className = "light"
+            }
 
-        document.querySelectorAll("svg").forEach((icons) => {
-            icons.style.fill = data.footer.icon;
-        });
+            noselect = data.footer.default;
+            select = data.footer.select;
 
-        listcolor = data.other.background;
-        listline = data.accent.line;
+            document.querySelectorAll("svg").forEach((icons) => {
+                icons.style.fill = data.footer.icon;
+            });
 
-        buttoncolor = data.accent.button;
+            listcolor = data.other.background;
+            listline = data.accent.line;
 
-        oddcolor = data.time.odd;
-        evencolor = data.time.even;
+            buttoncolor = data.accent.button;
 
-        switch (page) {
-            case "time":
-                document.getElementById("other").style.backgroundColor = noselect;
-                document.getElementById("todo").style.backgroundColor = noselect;
-                changetime();
-                break;
-            case "todo":
-                changetodo();
-                break;
-            case "other":
-                changeother();
-                break;
-        }
-    })
+            oddcolor = data.time.odd;
+            evencolor = data.time.even;
+
+            switch (page) {
+                case "time":
+                    document.getElementById("other").style.backgroundColor = noselect;
+                    document.getElementById("todo").style.backgroundColor = noselect;
+                    changetime();
+                    break;
+                case "todo":
+                    changetodo();
+                    break;
+                case "other":
+                    changeother();
+                    break;
+            }
+        })
 }
 
-document.getElementById("other").onclick = function() {
+document.getElementById("other").onclick = function () {
     changeother();
 }
 
-document.getElementById("todo").onclick = function() {
+document.getElementById("todo").onclick = function () {
     changetodo();
 }
 
-document.getElementById("time").onclick = function() {
+document.getElementById("time").onclick = function () {
     document.getElementById("other").style.backgroundColor = noselect;
     document.getElementById("todo").style.backgroundColor = noselect;
     changetime();
