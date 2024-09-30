@@ -96,14 +96,15 @@ function update() {
           a.pop();
           for (let index = 0; index < a.length; index++) {
             switch (a[index]) {
-              case '数学Ⅰ・Ⅱ':
-                document.getElementById(index).innerText = '数学\nⅠ・Ⅱ'
-                break;
               case '言語文化':
                   document.getElementById(index).innerText = '言語\n文化'
                   break;
               default:
-                document.getElementById(index).innerText = a[index];
+                if (text.startsWith('数学')) {
+                  document.getElementById(index).innerText = text.replace('数学', '数学\n');
+                } else {
+                  document.getElementById(index).innerText = a[index];
+                }
                 break;
             }
             document.getElementById('s_' + index).value = a[index];
