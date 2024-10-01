@@ -121,5 +121,6 @@ function update() {
   })
   .catch(error => {
       document.getElementById('timetable').innerText = '時間割のデータ取得に失敗しました。';
+      console.log(error)
   });
 }
