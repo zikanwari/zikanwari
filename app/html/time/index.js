@@ -100,8 +100,8 @@ function update() {
                   document.getElementById(index).innerText = '言語\n文化'
                   break;
               default:
-                if (text.startsWith('数学')) {
-                  document.getElementById(index).innerText = text.replace('数学', '数学\n');
+                if (a[index].startsWith('数学')) {
+                  document.getElementById(index).innerText = a[index].replace('数学', '数学\n');
                 } else {
                   document.getElementById(index).innerText = a[index];
                 }
