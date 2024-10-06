@@ -61,7 +61,7 @@ function update() {
     "なし"
   ]
 
-  for (let cellid = 0; cellid < 34; cellid++) {
+  for (let cellid = 0; cellid < 35; cellid++) {
 
     subjects.forEach(subject => {
 
