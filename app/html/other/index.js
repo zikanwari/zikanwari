@@ -165,7 +165,7 @@ function serverRegister() {
   navigator.serviceWorker.ready.then((serviceWorkerRegistration) => {
     const options = {
       userVisibleOnly: true,
-      applicationServerKey: "BG9rFFnvH8AcbQkHp6wPXKaqtkhU_C5ftKb9O4Y7zEEMCX2GMhnzv2s_JaeLi_ZaZPGzlhOt901UpAYNMVbXnno",
+      applicationServerKey: "BKJOWNxZQsHhVRfxIpZn1Xe__yGmBg7iMGEqARKhapJaOhZIpA7Mu-vQUMmePzrfRrawxMoXrcJwpuxhc_j2_PQ",
     };
     serviceWorkerRegistration.pushManager.subscribe(options).then(
       (pushSubscription) => {
