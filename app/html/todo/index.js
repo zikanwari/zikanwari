@@ -71,9 +71,11 @@ function startmoni_todo() {
 
     let oldtask = taskrestore(document.getElementById("tasks").value)
 
-    fetch('https://api.launchpencil.f5.si/todo/del/?user=' + username + '&pass=' + password +'&name=' + oldtask[0] + '&date=' + oldtask[1], {
-      mode: 'cors'
-    })
+    if (confirm("課題：") + oldtask + "を削除しますか？") {
+
+      fetch('https://api.launchpencil.f5.si/todo/del/?user=' + username + '&pass=' + password +'&name=' + oldtask[0] + '&date=' + oldtask[1], {
+        mode: 'cors'
+      })
         .then(response => response.text())
         .then(data => {
                 alert(data);
@@ -82,7 +84,8 @@ function startmoni_todo() {
         .catch(error => {
             alert('タスクのデータ更新に失敗しました。');
             taskupdate();
-        });
+      });
+    }
   });
 
   document.querySelectorAll('#togle, #settask').forEach(function(element) {
